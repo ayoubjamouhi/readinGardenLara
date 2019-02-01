@@ -1,0 +1,40 @@
+@import '../_variables';
+body {
+    background-color: #FFF
+}
+.ml-auto, .mx-auto {
+    margin-left: 0 !important
+}
+.navbar-light .navbar-brand {
+    color: #1abf54;
+    width: 15%
+}
+.navbar-light .navbar-nav .nav-link {
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.54) !important;
+}
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: rgba(0, 0, 0, 0.8) !important;
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1200px) {
+
+}
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {
+
+}
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+
+}
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+
+}
+// Phone
+@media (max-width: 320px) {
+    .navbar-light .navbar-brand {
+        width: 70%
+    }
+}

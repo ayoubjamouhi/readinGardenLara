@@ -1,0 +1,18 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Article extends Model
+{
+    public function index()
+    {
+        return $this->get();
+    }
+
+    public function show($slug)
+    {
+        return $this::where('slug', $slug)->get();
+    }
+}
