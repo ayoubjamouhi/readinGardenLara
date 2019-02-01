@@ -47,7 +47,14 @@ class ArticleController extends Controller
     {
         return (new Article)->show($slug);
     }
-
+    public function getArticle($slug)
+    {
+        return view('article', compact('slug'));
+    }
+    public function IndexBlog()
+    {
+        return view('blog');
+    }
     /**
      * Show the form for editing the specified resource.
      *

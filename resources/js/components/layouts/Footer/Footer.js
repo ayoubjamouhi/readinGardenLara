@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";import {
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {
   Col,
   Row
 } from 'reactstrap';

@@ -32,7 +32,7 @@ class Header extends Component {
       <React.Fragment>
         <Navbar  style={ {width:'100%'} } light expand="md" >
           <a href="/" className="navbar-brand">
-            <img src="images/logo.png" alt="readinGarden" style={ {width:'100%'} }/>
+            <img src="/images/logo.png" alt="readinGarden" style={ {width:'100%'} }/>
           </a>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

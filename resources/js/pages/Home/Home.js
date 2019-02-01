@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import axios from 'axios';
+// Components
 import Header from '../../components/layouts/Header/Header';
 import Footer from '../../components/layouts/Footer/Footer';
 import Main from './Main/Main';
-
+// Style
 import './styles/main.scss';
-import './styles/featured.scss';
-import './styles/featured-members.scss';
-import axios from 'axios';
+
 class Home extends React.Component {
    constructor() {
       super();

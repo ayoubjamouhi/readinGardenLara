@@ -12,6 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.react('resources/js/pages/Home/Home.js', 'public/js')
+   .react('resources/js/pages/Article/Article.js', 'public/js')
+   .react('resources/js/pages/Blog/Blog.js', 'public/js')
    .webpackConfig({
       module: {
             rules: [

@@ -18,4 +18,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('articles', 'ArticleController');
+Route::get('/article/{id}', 'ArticleController@getArticle');
+Route::get('/blog', 'ArticleController@IndexBlog');
 Route::resource('messages', 'MessageController');
