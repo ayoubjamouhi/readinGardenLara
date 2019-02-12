@@ -1,0 +1,28 @@
+@import '../../../components/layouts/variables';
+ol { counter-reset: item }
+li{ display: block }
+.privacy--top li:before,
+.privacy li:before
+{
+   content: counters(item, ".") " ";
+   counter-increment: item
+}
+
+.privacy--top {
+   li {
+      color: #065c05;
+      font-size: 25px;
+      a {
+         color: #065c05;
+      }
+   }
+}
+.privacy {
+   li {
+      color: black;
+      font-size: 25px;
+      a {
+         color: black;
+      }
+   }
+}

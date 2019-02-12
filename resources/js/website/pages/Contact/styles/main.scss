@@ -1,0 +1,151 @@
+@import '../../../components/layouts/variables';
+
+footer {
+   padding: 60px 10px;
+   margin-top: 40px;
+   background-color: $author;
+   div.left {
+      div.share {
+         text-align: center;
+         a{
+            color: #FFF;
+            font-size: 25px;
+            padding-right: 5px
+         }
+      }
+   }
+   div.right {
+      div.pages {
+         ul {
+            margin: 0;
+            li {
+               float: left;
+               list-style: none;
+               margin-right: 9px;
+               a {
+                  font-size: 22px;
+                  color: #FFF;
+               }
+            }
+         }
+      }
+   }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1200px) {
+   footer {
+      padding: 60px 10px;
+      margin-top: 40px;
+      background-color: $author;
+      div.left {
+         div.share {
+            a {
+               color: #FFF;
+               font-size: 25px;
+               padding-right: 5px
+            }
+
+         }
+      }
+      div.right {
+         div.pages {
+            ul {
+               margin: 0;
+               li {
+                  float: left;
+                  list-style: none;
+                  margin-right: 9px;
+                  a {
+                     font-size: 22px;
+                     color: #FFF;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {
+
+}
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+
+}
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+   footer {
+      padding: 28px 10px;
+      margin-top: 29px;
+      background-color: $author;
+      div.left {
+         text-align: center;
+         div.share {
+            text-align: center;
+            a{
+               color: #FFF;
+               font-size: 25px;
+               padding-right: 5px
+            }
+         }
+      }
+      div.right {
+         div.pages {
+            ul {
+               margin: 0;
+               overflow: hidden;
+               padding: 0;
+               li {
+                  float: left;
+                  list-style: none;
+                  margin-right: 9px;
+                  width: 100%;
+                  text-align: center;
+                  a {
+                     font-size: 22px;
+                     color: #FFF;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+// Phone
+@media (max-width: 320px) {
+   footer {
+      padding: 60px 10px;
+      margin-top: 40px;
+      background-color: $author;
+      div.left {
+         text-align: center;
+         div.share {
+            text-align: center;
+            a{
+               color: #FFF;
+               font-size: 25px;
+               padding-right: 5px
+            }
+
+
+         }
+      }
+      div.right {
+         div.pages {
+            ul {
+               margin: 0;
+               li {
+                  float: left;
+                  list-style: none;
+                  margin-right: 9px;
+                  a {
+                     font-size: 22px;
+                     color: #FFF;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

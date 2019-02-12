@@ -11,6 +11,7 @@
 <body>
     <div id="root"></div>
     <div id="slug" style="display:none"><?=$slug;?></div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="{{ asset('js/Article.js') }}"></script>
 </body>
 </html>

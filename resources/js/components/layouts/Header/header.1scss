@@ -1,6 +1,0 @@
-.navbar {
-   background-color: #ffc600
-}
-.navbar-expand-md .navbar-nav .nav-link {
-   color: #464646
-}

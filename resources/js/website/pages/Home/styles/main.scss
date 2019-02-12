@@ -1,0 +1,15 @@
+main {
+    background-image: url("/images/bank-note-rotated.svg");
+    background-size: 10px;
+    background-position: top left;
+}
+h1 > a {
+    font-family: 'santorini', sans-serif;
+}
+button {
+    background: none;
+    border: 0
+}
+a:hover {
+    cursor: pointer;
+}
