@@ -1,0 +1,116 @@
+@import '../_variables.scss';
+
+footer {
+   padding: 60px 10px;
+   margin-top: 40px;
+   background-color: $author;
+   div.left {
+      div.share {
+         text-align: center;
+         i {
+            color: #FFF;
+            font-size: 25px;
+            padding-right: 5px
+         }
+      }
+   }
+   div.right {
+      div.pages {
+         ul {
+            margin: 0;
+            li {
+               float: left;
+               list-style: none;
+               margin-right: 9px;
+               a {
+                  font-size: 22px;
+                  color: #FFF;
+               }
+            }
+         }
+      }
+   }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1200px) {
+   footer {
+      padding: 60px 10px;
+      margin-top: 40px;
+      background-color: $author;
+      div.left {
+         div.share {
+            i {
+               color: #FFF;
+               font-size: 25px;
+               padding-right: 5px
+            }
+         }
+      }
+      div.right {
+         div.pages {
+            ul {
+               margin: 0;
+               li {
+                  float: left;
+                  list-style: none;
+                  margin-right: 9px;
+                  a {
+                     font-size: 22px;
+                     color: #FFF;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+// Phone
+@media (max-width: 320px) {
+   footer {
+      padding: 60px 10px;
+      margin-top: 40px;
+      background-color: $author;
+      div.left {
+         text-align: center;
+         div.share {
+            text-align: center;
+            a{
+               i {
+                  color: #FFF;
+                  font-size: 25px;
+                  padding-right: 5px
+               }
+            }
+
+         }
+      }
+      div.right {
+         div.pages {
+            ul {
+               margin: 0;
+               li {
+                  float: left;
+                  list-style: none;
+                  margin-right: 9px;
+                  a {
+                     font-size: 22px;
+                     color: #FFF;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

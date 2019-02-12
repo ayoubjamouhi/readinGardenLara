@@ -1,8 +1,3 @@
 {
-    "/js/About.js": "/js/About.js",
-    "/js/Article.js": "/js/Article.js",
-    "/js/Blog.js": "/js/Blog.js",
-    "/js/Contact.js": "/js/Contact.js",
-    "/js/Home.js": "/js/Home.js",
-    "/js/Privacy.js": "/js/Privacy.js"
+    "/js/indexDash.js": "/js/indexDash.js"
 }
