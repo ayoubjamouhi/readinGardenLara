@@ -5,7 +5,7 @@ import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGr
 class Login extends Component {
 
   render() {
-
+    console.log(this.props.isLogin);
     return (
       <div className="app flex-row align-items-center">
         <Container>

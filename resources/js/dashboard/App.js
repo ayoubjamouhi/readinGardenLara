@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
-global.axios = require('axios');
 import store from './store';
 // import { renderRoutes } from 'react-router-config';
 import Loadable from 'react-loadable';
@@ -12,13 +11,22 @@ global.swal = require('sweetalert2');
 const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
 
 // Containers
-/*
-const HomeLayout = Loadable({
-  loader: () => import('./containers/HomeLayout'),
+const DefaultLayout = Loadable({
+  loader: () => import('./containers/DefaultLayout'),
   loading
-});*/
+});
+
 // Pages
-import HomeLayout from './containers/HomeLayout';
+const Login = Loadable({
+  loader: () => import('./views/Pages/Login'),
+  loading
+});
+
+const Register = Loadable({
+  loader: () => import('./views/Pages/Register'),
+  loading
+});
+
 const Page404 = Loadable({
   loader: () => import('./views/Pages/Page404'),
   loading
@@ -36,22 +44,14 @@ class App extends Component {
       <Provider store={store}>
         <HashRouter>
           <Switch>
-            <Route
-              exact
-              path="/404"
-              name="Page 404"
-              component={Page404}
-            />
-            <Route
-              exact
-              path="/500"
-              name="Page 500"
-              component={Page500}
-            />
+            <Route exact path="/login" name="Login Page" component={Login} />
+            <Route exact path="/register" name="Register Page" component={Register} />
+            <Route exact path="/404" name="Page 404" component={Page404} />
+            <Route exact path="/500" name="Page 500" component={Page500} />
             <Route
               path="/"
               name="Home"
-              component={HomeLayout}
+              component={DefaultLayout}
             />
           </Switch>
         </HashRouter>
