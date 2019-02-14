@@ -5,13 +5,7 @@ import rootReducer from './containers/reducers/index';
 
 // create an object for the default data
 const defaultState = {
-  journaux: [],
-  contreparties: [],
-  fournisseurs: [],
-  plancomptables: [],
-  succursales: [],
-  libelles: [],
-  isLogin: false
+  articles: []
 };
 const enhacers = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f

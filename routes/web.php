@@ -1,6 +1,6 @@
 <?php
 
-Auth::routes();
+Auth::routes(['register' => false]);
 // Index
 Route::get('/', 'IndexController@index');
 // Articles
@@ -9,7 +9,7 @@ Route::get('/article/{id}', 'ArticleController@getArticle');
 // Contact
 Route::resource('contact', 'ContactController');
 // Home
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 // Blog
 Route::get('/blog', 'ArticleController@IndexBlog');
 // Privacy Policy

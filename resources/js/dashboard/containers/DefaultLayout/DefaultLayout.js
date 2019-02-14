@@ -52,7 +52,7 @@ class App extends Component {
       <div className="app">
         <AppHeader {...rest} fixed >
           <Suspense  fallback={this.loading()}>
-            <DefaultHeader onLogout={e=>this.signOut(e)}/>
+            <DefaultHeader />
           </Suspense>
         </AppHeader>
         <div className="app-body">
@@ -108,13 +108,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    journaux: state.journaux,
-    contreparties: state.contreparties,
-    fournisseurs: state.fournisseurs,
-    plancomptables: state.plancomptables,
-    succursales: state.succursales,
-    libelles: state.libelles,
-    isLogin: state.isLogin
+    articles: state.articles,
   }
 }
 

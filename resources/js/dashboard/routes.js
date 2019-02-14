@@ -36,37 +36,17 @@ const Typography = React.lazy(() => import('./views/Theme/Typography'));
 const Widgets = React.lazy(() => import('./views/Widgets/Widgets'));
 const Users = React.lazy(() => import('./views/Users/Users'));
 const User = React.lazy(() => import('./views/Users/User'));
-// Gestion Journaux
-const Journaux = React.lazy(() => import('./views/Gestion/Journaux/Journaux'));
-// Gestion Fournisseurs
-const Fournisseurs = React.lazy(() => import('./views/Gestion/Fournisseurs/Fournisseurs'));
-// Gestion Plan Comptable
-const PlanComptable = React.lazy(() => import('./views/Gestion/PlanComptable/PlanComptable'));
-// Gestion Succursale
-const Succursales = React.lazy(() => import('./views/Gestion/Succursales/Succursales'));
-// Gestion Libelles
-const Libelles = React.lazy(() => import('./views/Gestion/Libelles/Libelles'));
-// Mouvements
-const SaisieM = React.lazy(() => import('./views/Mouvements/Saisie'));
-// https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
+// Gestion Articles
+const Articles = React.lazy(() => import('./views/Gestion/Articles/Articles'));
+
 const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/theme', exact: true, name: 'Theme', component: Colors },
   { path: '/theme/colors', name: 'Colors', component: Colors },
   { path: '/theme/typography', name: 'Typography', component: Typography },
-  // Gestion Journaux
-  { path: '/gestion/journaux', name: 'Journaux', component: Journaux },
-  // Gestion Fournisseurs
-  { path: '/gestion/fournisseurs', name: 'Fournisseurs', component: Fournisseurs },
-  // Gestion Comptable
-  { path: '/gestion/plancomptable', name: 'Plan Comptable', component: PlanComptable },
-   // Gestion Succursale
-   { path: '/gestion/succursales', name: 'succursales', component: Succursales },
-    // Gestion Succursale
-    { path: '/gestion/libelles', name: 'Libellés', component: Libelles },
-  // Mouvements
-  { path: '/mouvements/saisie', name: 'Saisie', component: SaisieM },
+  // Gestion Articles
+  { path: '/gestion/articles', name: 'Articles', component: Articles },
   { path: '/base', exact: true, name: 'Base', component: Cards },
   { path: '/base/cards', name: 'Cards', component: Cards },
   { path: '/base/forms', name: 'Forms', component: Forms },
