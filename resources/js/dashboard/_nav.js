@@ -37,8 +37,38 @@ export default {
       },
     },
     {
+      name: 'Journaux',
+      url: '/gestion/journaux',
+      icon: 'icon-note',
+    },
+    {
       name: 'Articles',
       url: '/gestion/articles',
+      icon: 'icon-note',
+    },
+    {
+      name: 'Fournisseurs',
+      url: '/gestion/fournisseurs',
+      icon: 'icon-note',
+    },
+    {
+      name: 'Plan Comptable',
+      url: '/gestion/plancomptable',
+      icon: 'icon-note',
+    },
+    {
+      name: 'Succursales',
+      url: '/gestion/succursales',
+      icon: 'icon-note',
+    },
+    {
+      name: 'Libellés',
+      url: '/gestion/libelles',
+      icon: 'icon-note',
+    },
+    {
+      name: 'Comptes',
+      url: '/gestion/comptes',
       icon: 'icon-note',
     },
     {

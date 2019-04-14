@@ -1,23 +1,20 @@
-/* GESTION ARTICLES */
-// fetch data
-export function fetcharticles(donnees) {
-  return {
-    type: 'FETCH_ARTICLES',
-    donnees
-  }
+/* Gestion JOURNAUX */
+// fetch JOURNAUX
+export function fetch_articles(donnees) {
+ return {
+   type: 'FETCH_ARTICLES',
+   donnees
+ }
 }
-// Add
-export function addarticle(line) {
-  return {
-    type: 'ADD_ARTICLE',
-    line
-  }
-}
-// Set State to []
-export function setstatearticleempty() {
+// Donnees Articles State to []
+export function set_state_articles_empty() {
   return {
     type: 'SET_STATE_ARTICLES_EMPTY'
   }
 }
-
-
+export function add_article(article) {
+  return {
+    type: 'ADD_ARTICLE',
+    article
+  }
+ }

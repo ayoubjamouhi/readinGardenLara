@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-// Gestion articles
+// Gestion Articles
 import articles from './articles';
 
 const rootReducer = combineReducers({ articles });

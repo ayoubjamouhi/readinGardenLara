@@ -1,10 +1,10 @@
 function articles(state = [], action) {
    switch(action.type) {
-       case 'FETCH_ARTICLE' :
-            console.log("FETCH_ARTICLE");
+       case 'FETCH_ARTICLES' :
+            console.log("SET_ARTICLES_IMPRIMER");
             return [
                 ...state,
-                ...action.payload,
+                ...action.donnees,
             ]
         case 'ADD_ARTICLE' :
             console.log("ADD_ARTICLE");

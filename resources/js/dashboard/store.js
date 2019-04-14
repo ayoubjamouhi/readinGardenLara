@@ -5,7 +5,8 @@ import rootReducer from './containers/reducers/index';
 
 // create an object for the default data
 const defaultState = {
-  articles: []
+  articles: [],
+  isLogin: false
 };
 const enhacers = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f

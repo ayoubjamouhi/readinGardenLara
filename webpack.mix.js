@@ -12,7 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix
-   //.react('resources/js/website/pages/Home/Home.js', 'public/js')
+   .react('resources/js/website/pages/Home/Home.js', 'public/js')
    //.react('resources/js/website/pages/Article/Article.js', 'public/js')
    //.react('resources/js/website/pages/Blog/Blog.js', 'public/js')
    //.react('resources/js/website/pages/Contact/Contact.js', 'public/js')

@@ -52,7 +52,7 @@ class App extends Component {
       <div className="app">
         <AppHeader {...rest} fixed >
           <Suspense  fallback={this.loading()}>
-            <DefaultHeader />
+            <DefaultHeader onLogout={e=>this.signOut(e)}/>
           </Suspense>
         </AppHeader>
         <div className="app-body">
