@@ -155,19 +155,17 @@ function Articles(props) {
    const [ IsFeatured , setIsFeatured] = useState(0);
    const state = [id, userid, imageid, credit, title, slug, description, html, IsFeatured];
    useEffect(() => {
-
       const fetchArticles = async () => {
          try {
-            const articles = await axios.get('/articles');
+            const {data} = await axios.get('/articles');
             if(props.articles.length === 0)
-               props.fetch_articles(articles);
-            console.log(articles);
+               props.fetch_articles(data);
          } catch (error) {
             console.log(error);
          }
       }
       fetchArticles();
-   }, []);
+   });
   const setStateChange = function(name, value) {
       console.log(value);
       this.setState({ [name]: value })
@@ -204,7 +202,7 @@ function Articles(props) {
             <CardHeader>
                <strong>Gestion</strong> des Journaux
             </CardHeader>
-            {/*<BodyForm
+            <BodyForm
                articles={props.articles}
                addArticle={props.add_article}
                articles={state}
@@ -218,7 +216,7 @@ function Articles(props) {
                   fillForm={fillForm}
                   del={del}
                />
-            </CardBody>*/}
+            </CardBody>
          </Card>
       </div>
    );

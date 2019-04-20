@@ -97,16 +97,22 @@ import {
 } from 'reactstrap';
 
 function DataTable(props) {
+   const edit = function (e){
+      e.preventDefault();
+      console.log(e);
+   }
    return (
       <Table hover bordered striped responsive size="sm">
             <thead>
                <tr>
-                  <th width="10%">Code Journal</th>
-                  <th width="25%">Intitulé</th>
-                  <th width="10%">Contre Partie</th>
-                  <th width="25%">Intitulé</th>
-                  <th width="10%">Type</th>
-                  <th width="10%">Actions</th>
+                  <th >Id</th>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Categorie</th>
+                  <th>Slug</th>
+                  <th>User</th>
+                  <th>Is Featured</th>
+                  <th>Actions</th>
                </tr>
             </thead>
             <tbody>
@@ -115,6 +121,23 @@ function DataTable(props) {
                   return (
                      <tr key={elem.id}>
                         <td>{elem.id}</td>
+                        <td>{elem.title}</td>
+                        <td>{elem.description}</td>
+                        <td>{elem.categorie}</td>
+                        <td>{elem.slug}</td>
+                        <td>{elem.user_id}</td>
+                        <td>{elem.is_featured == 1 ? 'YES' : 'NO'}</td>
+                        <td>
+                           <i
+                              className="fa fa-pencil i-edit" data-id={elem.code}
+                              onClick={(e)=>edit(e)}
+                           ></i>
+                           <i
+                              className="fa fa-trash-o i-trash" onClick={(e) => this.del(e)}
+                              data-id={elem.code}
+                           >
+                           </i>
+                        </td>
                         { /*<td>{elem.intitule}</td>
                         <td>{elem.contrepartie}</td>
                         <td>{elem.contrepartie_intitule}</td>
