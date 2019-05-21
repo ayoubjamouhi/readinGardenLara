@@ -40,17 +40,19 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
     public function show($slug)
     {
         return (new Article)->show($slug);
     }
+
     public function getArticle($slug)
     {
         return view('article', compact('slug'));
     }
+
     public function IndexBlog()
     {
         return view('blog');

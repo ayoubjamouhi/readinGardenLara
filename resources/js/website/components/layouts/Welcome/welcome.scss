@@ -18,12 +18,19 @@ section.welcome {
        > div {
            button.get--started {
                background-color: #1C9963;
-               color: #FFF;
                margin-right: 5px;
+               a {
+                   text-decoration: none;
+                   color: #FFF;
+               }
            }
            button.learn--more {
                background: none;
                border: 1px solid #292929;
+               a {
+                text-decoration: none;
+                color: #FFF;
+                }
            }
        }
    }

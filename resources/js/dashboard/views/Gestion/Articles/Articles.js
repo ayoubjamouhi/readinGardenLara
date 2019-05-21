@@ -150,10 +150,11 @@ function Articles(props) {
    const [ credit , setCredit] = useState('');
    const [ title , setTitle] = useState('');
    const [ slug , setSlug] = useState('');
+   const [ categorie , setCategorie] = useState('');
    const [ description , setDescription] = useState('');
    const [ html , setHtml] = useState('');
-   const [ IsFeatured , setIsFeatured] = useState(0);
-   const state = [id, userid, imageid, credit, title, slug, description, html, IsFeatured];
+   const [ is_featured , setIsFeatured] = useState(0);
+   const state = { id, userid, imageid, credit, title, slug, categorie, description, html, is_featured };
    useEffect(() => {
       const fetchArticles = async () => {
          try {
@@ -167,26 +168,25 @@ function Articles(props) {
       fetchArticles();
    });
   const setStateChange = function(name, value) {
-      console.log(value);
       this.setState({ [name]: value })
    };
    const setStateNull = function() {
-      this.setState({
-         code_journal: '',
-         code_journal_intitule:'',
-         contre_parties:'',
-         contre_parties_intitule:'',
-         type:'achats',
-      })
+      setCredit('');
+      setTitle('');
+      setSlug('');
+      setCategorie('');
+      setDescription('');
+      setIsFeatured('');
+      setHtml('');
    };
-   const fillForm = function(journal) {
-      this.setState({
-         code_journal: journal.code,
-         code_journal_intitule: journal.intitule,
-         contre_parties: journal.contrepartie,
-         contre_parties_intitule: journal.contrepartie_intitule,
-         type: journal.type,
-      })
+   const fillForm = function(article) {
+      setCredit(article.credit);
+      setTitle(article.title);
+      setSlug(article.slug);
+      setCategorie(article.categorie);
+      setDescription(article.description);
+      setIsFeatured(article.is_featured);
+      setHtml(article.html);
    };
    const del = function(id) {
       console.log(id);
@@ -200,12 +200,12 @@ function Articles(props) {
       <div className="animated fadeIn">
          <Card>
             <CardHeader>
-               <strong>Gestion</strong> des Journaux
+               <strong>Gestion</strong> des Articles
             </CardHeader>
             <BodyForm
                articles={props.articles}
                addArticle={props.add_article}
-               articles={state}
+               article={state}
                setStateChange={setStateChange}
                setStateNull={setStateNull}
             />

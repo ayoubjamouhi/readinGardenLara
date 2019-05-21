@@ -5,7 +5,9 @@ Auth::routes(['register' => false]);
 Route::get('/', 'IndexController@index');
 // Articles
 Route::resource('articles', 'ArticleController');
-Route::get('/article/{id}', 'ArticleController@getArticle');
+// Article
+Route::get('/article/{slug}', 'ArticleController@getArticle');
+Route::get('/article/get/{slug}', 'ArticleController@show');
 // Contact
 Route::resource('contact', 'ContactController');
 // Home

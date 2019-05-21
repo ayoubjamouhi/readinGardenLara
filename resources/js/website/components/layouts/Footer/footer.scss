@@ -47,7 +47,7 @@ footer {
    footer {
       padding: 60px 10px;
       margin-top: 40px;
-      background-color: $green;
+      background-color: $yellow;
       div.left {
          div.share {
             a {
@@ -59,6 +59,7 @@ footer {
          }
       }
       div.right {
+
          div.pages {
             ul {
                margin: 0;
@@ -89,7 +90,7 @@ footer {
    footer {
       padding: 28px 10px;
       margin-top: 29px;
-      background-color: $green;
+      background-color: $yellow;
       div.left {
          text-align: center;
          div.share {
@@ -102,6 +103,12 @@ footer {
          }
       }
       div.right {
+         span {
+            text-align: center;
+            font-size: 23px;
+            display: block;
+            width: 100%;
+         }
          div.pages {
             ul {
                margin: 0;
@@ -128,7 +135,7 @@ footer {
    footer {
       padding: 28px 10px;
       margin-top: 40px;
-      background-color: $green;
+      background-color: $yellow;
       div.left {
          text-align: center;
          div.share {
@@ -138,11 +145,14 @@ footer {
                font-size: 25px;
                padding-right: 5px
             }
-
-
          }
       }
       div.right {
+         span {
+            text-align: center;
+            display: block;
+            width: 100%;
+         }
          div.pages {
             ul {
                margin: 0;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
@@ -6,23 +6,25 @@ import axios from 'axios';
 import Header from '../../components/layouts/Header/Header';
 import Footer from '../../components/layouts/Footer/Footer';
 import Main from './Main/Main';
-// Style
+const LazyMain = React.lazy( () => import('./Main/Main'));
+// Stylew
 import './styles/main.scss';
 
 class Home extends React.Component {
    constructor() {
       super();
       this.state = {
-         articles: []
+         article: []
       }
    }
    async componentDidMount () {
+      const slug = window.location.href.split('/')[4];
       try {
-         const articles = await axios.get('/articles');
-         if(articles.data.length != 0)
+         const article = await axios.get(`/article/get/${slug}`);
+         if(article.data.length != 0)
          {
             this.setState({
-               articles: articles.data
+               article: article.data[0]
             });
          }
       } catch (err) {
@@ -32,13 +34,16 @@ class Home extends React.Component {
    render() {
       return (
          <React.Fragment>
-            { this.state.articles.length != 0 ?
+            { this.state.article.length != 0 ?
                <React.Fragment>
                   <Header />
-                  <Main articles={this.state.articles}/>
+                  <Suspense fallback={<div>Loading ...</div>}>
+                     <LazyMain article={this.state.article}/>
+                  </Suspense>
+                  { /* <Main article={this.state.article}/> */}
                   <Footer />
                </React.Fragment>
-            : ''}
+            : '' }
          </React.Fragment>
       );
    }

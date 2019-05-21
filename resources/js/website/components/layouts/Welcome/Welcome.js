@@ -11,8 +11,8 @@ class Welcome extends React.Component {
                         <h1>Welcome to readinGarden</h1>
                         <h5>We’ll deliver the best stories and ideas on the topics you care about most straight to your homepage, app, or inbox.</h5>
                         <div className="buttons">
-                            <Button className="get--started">Get started</Button>
-                            <Button className="learn--more">Learn more</Button>
+                            <Button className="get--started"><a href="/blog">Get started</a></Button>
+                            <Button className="learn--more"><a href="/about-us">Learn more</a></Button>
                         </div>
                     </div>
          </section>

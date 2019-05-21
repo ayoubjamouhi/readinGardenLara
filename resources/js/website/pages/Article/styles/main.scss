@@ -31,7 +31,8 @@ section.post {
     div.right {
         h3.categorie {
             text-transform: uppercase;
-            color: $gris;
+            color: #ffc600;
+            padding-top: 30px;
         }
         h1.title {
             font-family: 'Roboto', sans-serif;
@@ -49,7 +50,9 @@ section.post {
         div.user {
             div.image {
                 img {
-                    width: 100%
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%
                 }
             }
             div.info {
@@ -314,6 +317,9 @@ section.post {
 }
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
+    .container-fluid {
+        padding: 0;
+    }
     section.post {
         div.image--top {
             margin-top: 10px;
@@ -344,6 +350,7 @@ section.post {
             }
             div.right {
                 text-align: center;
+                padding: 0;
                 h3.categorie {
                     text-transform: uppercase;
                     color: #1abebf;
@@ -351,7 +358,7 @@ section.post {
                 h1.title {
                     font-family: Arial;
                     margin: 20px 0;
-                    font-size: 16px;
+                    font-size: 33px;
                     font-weight: bold;
                 }
                 h2.description {
@@ -386,7 +393,8 @@ section.post {
                     }
                 }
                 article {
-                    font-size: 22px;
+                    font-size: 19px;
+                    text-align: left;
                     color: $article;
                     font-family: 'Roboto', sans-serif;
                     padding: 3px;
@@ -430,15 +438,15 @@ section.post {
             }
             div.right {
                 text-align: center;
+                padding: 0;
                 h3.categorie {
                     text-transform: uppercase;
-                    color: #1abebf;
+                    color: #ffc600;
                 }
                 h1.title {
                     font-family: Arial;
                     margin: 20px 0;
-                    font-size: 16px;
-                    font-weight: bold;
+                    font-size: 30px;
                 }
                 h2.description {
                     color: $gris;
@@ -472,7 +480,8 @@ section.post {
                     }
                 }
                 article {
-                    font-size: 22px;
+                    font-size: 16px;
+                    text-align: left;
                     color: $article;
                     font-family: 'Roboto', sans-serif;
                     padding: 3px;

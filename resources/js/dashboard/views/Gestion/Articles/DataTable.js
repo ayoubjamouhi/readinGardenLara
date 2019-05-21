@@ -99,7 +99,8 @@ import {
 function DataTable(props) {
    const edit = function (e){
       e.preventDefault();
-      console.log(e);
+      const article = props.articles.find(elem => elem.id == e.target.getAttribute('data-id'));
+      props.fillForm(article)
    }
    return (
       <Table hover bordered striped responsive size="sm">
@@ -110,6 +111,7 @@ function DataTable(props) {
                   <th>Description</th>
                   <th>Categorie</th>
                   <th>Slug</th>
+                  <th>Credit</th>
                   <th>User</th>
                   <th>Is Featured</th>
                   <th>Actions</th>
@@ -118,48 +120,32 @@ function DataTable(props) {
             <tbody>
             {
                props.articles.map((elem,i) => {
+                  console.log(typeof(elem.credit));
                   return (
-                     <tr key={elem.id}>
+                     <tr key={elem.id} >
                         <td>{elem.id}</td>
-                        <td>{elem.title}</td>
-                        <td>{elem.description}</td>
+                        <td>{elem.title != '' ? elem.title : '❌'}</td>
+                        <td>{elem.credit != '' ? elem.credit : '❌'}</td>
                         <td>{elem.categorie}</td>
                         <td>{elem.slug}</td>
+                        <td>{elem.credit != '' ? elem.credit : '❌'}</td>
                         <td>{elem.user_id}</td>
                         <td>{elem.is_featured == 1 ? 'YES' : 'NO'}</td>
                         <td>
                            <i
-                              className="fa fa-pencil i-edit" data-id={elem.code}
-                              onClick={(e)=>edit(e)}
+                              className="fa fa-pencil i-edit" data-id={elem.id}
+                              onClick={ (e) => edit(e) }
                            ></i>
                            <i
-                              className="fa fa-trash-o i-trash" onClick={(e) => this.del(e)}
-                              data-id={elem.code}
+                              className="fa fa-trash-o i-trash" onClick={ (e) => del(e) }
+                              data-id={elem.id}
                            >
                            </i>
                         </td>
-                        { /*<td>{elem.intitule}</td>
-                        <td>{elem.contrepartie}</td>
-                        <td>{elem.contrepartie_intitule}</td>
-                        <td>
-                           <Badge color="success">{elem.type}</Badge>
-                        </td>
-                        <td>
-                           <i
-                              className="fa fa-pencil i-edit" data-id={elem.code}
-                              onClick={(e) => this.edit(e)}
-                           ></i>
-                           <i
-                              className="fa fa-trash-o i-trash" onClick={(e) => this.del(e)}
-                              data-id={elem.code}
-                           >
-                           </i>
-                  </td> */ }
                      </tr>
                )
                })
             }
-
             </tbody>
          </Table>
    );

@@ -9,7 +9,6 @@ import {
 
 class Featured extends React.Component {
    render() {
-
       const article1 = <Col className="left" xs="12" sm="5" md="5" lg="5" xl="5">
          <a href={"article/" + this.props.articles[this.props.articles.length - 1].slug}>
             <img src={'images/' + this.props.articles[this.props.articles.length - 1].image_id} alt="img" />
@@ -29,7 +28,6 @@ class Featured extends React.Component {
             {this.props.articles[this.props.articles.length - 1].date}
          </h6>
       </Col>
-      console.log(this.props.articles[this.props.articles.length - 1]);
       const article_center = <Col className="center" xs="12" sm="4" md="4" lg="4" xl="4">
          <div>
             <div className="col-img">

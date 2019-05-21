@@ -77,9 +77,9 @@ class FeaturedMembers extends React.Component {
                   </div>
                   <div className="footer">
                      <a href="blog">Blog</a>
-                     <a href="privacy">Privacy</a>
+                     <a href="privacy-policy">Privacy</a>
                      <a href="contact">Contact us</a>
-                     <a href="about">About</a>
+                     <a href="about-us">About</a>
                   </div>
                </Col>
             </Row>
