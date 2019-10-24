@@ -1,5 +1,5 @@
 {
-    "/js/Article.js": "/js/Article.js",
-    "/js/Blog.js": "/js/Blog.js",
-    "/js/Home.js": "/js/Home.js"
+    "/css/article.css": "/css/article.css",
+    "/css/header.css": "/css/header.css",
+    "/css/footer.css": "/css/footer.css"
 }

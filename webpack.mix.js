@@ -12,13 +12,17 @@ const mix = require('laravel-mix');
  */
 
 mix
-   .react('resources/js/website/pages/Home/Home.js', 'public/js')
-   .react('resources/js/website/pages/Article/Article.js', 'public/js')
-   .react('resources/js/website/pages/Blog/Blog.js', 'public/js')
+   //.react('resources/js/website/pages/Home/Home.js', 'public/js')
+   //.react('resources/js/website/pages/Article/Article.js', 'public/js')
+   //.react('resources/js/website/pages/Blog/Blog.js', 'public/js')
    //.react('resources/js/website/pages/Contact/Contact.js', 'public/js')
    //.react('resources/js/website/pages/Privacy/Privacy.js', 'public/js')
    //.react('resources/js/website/pages/About/About.js', 'public/js')
    //.react('resources/js/dashboard/index.js', 'public/js/indexDash.js')
+   .sass('resources/sass/article.scss', 'public/css/article.css')
+   .sass('resources/sass/header.scss', 'public/css/header.css')
+   .sass('resources/sass/footer.scss', 'public/css/footer.css')
+
    .webpackConfig({
       module: {
             rules: [
@@ -30,4 +34,4 @@ mix
       }
       //devtool: "inline-source-map"
       })
-      .sourceMaps();
+   .sourceMaps();

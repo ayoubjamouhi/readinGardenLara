@@ -6,7 +6,7 @@ Route::get('/', 'IndexController@index');
 // Articles
 Route::resource('articles', 'ArticleController');
 // Article
-Route::get('/article/{slug}', 'ArticleController@getArticle');
+Route::get('/{slug}', 'ArticleController@getArticle');
 Route::get('/article/get/{slug}', 'ArticleController@show');
 // Contact
 Route::resource('contact', 'ContactController');

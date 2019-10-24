@@ -50,7 +50,9 @@ class ArticleController extends Controller
 
     public function getArticle($slug)
     {
-        return view('article', compact('slug'));
+        $post = (new Article)->show($slug)[0];
+        //dd($post[0]->id);
+        return view('article', compact('slug', 'post'));
     }
 
     public function IndexBlog()

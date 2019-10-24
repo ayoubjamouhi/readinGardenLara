@@ -7,7 +7,7 @@ import Header from '../../components/layouts/Header/Header';
 import Footer from '../../components/layouts/Footer/Footer';
 import Main from './Main/Main';
 const LazyMain = React.lazy( () => import('./Main/Main'));
-// Stylew
+// Style
 import './styles/main.scss';
 
 class Home extends React.Component {
