@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Article;
+use Illuminate\Http\Request;
+
 class ArticleController extends Controller
 {
     /**
@@ -48,17 +49,6 @@ class ArticleController extends Controller
         return (new Article)->show($slug);
     }
 
-    public function getArticle($slug)
-    {
-        $post = (new Article)->show($slug)[0];
-        //dd($post[0]->id);
-        return view('article', compact('slug', 'post'));
-    }
-
-    public function IndexBlog()
-    {
-        return view('blog');
-    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -91,5 +81,17 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getArticle($slug)
+    {
+        $post = (new Article)->show($slug)[0];
+        //dd($post[0]->id);
+        return view('article', compact('slug', 'post'));
+    }
+
+    public function indexBlog()
+    {
+        return view('blog');
     }
 }

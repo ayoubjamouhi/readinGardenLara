@@ -8,7 +8,7 @@
             <div class="container">
                <section class="post">
                      <div class="image--top">
-                           <img src={{ $post->image_id }} alt="img" />
+                           <img src={{ "images/" . $post->image_id }} alt="img" />
                            <p class="credit">Credit: {{ $post->credit }}</p>
                      </div>
                      <div class="row bottom">

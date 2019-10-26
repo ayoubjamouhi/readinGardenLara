@@ -1,5 +1,8 @@
 {
     "/css/article.css": "/css/article.css",
     "/css/header.css": "/css/header.css",
-    "/css/footer.css": "/css/footer.css"
+    "/css/footer.css": "/css/footer.css",
+    "/css/featured.css": "/css/featured.css",
+    "/css/welcome.css": "/css/welcome.css",
+    "/css/featured-members.css": "/css/featured-members.css"
 }

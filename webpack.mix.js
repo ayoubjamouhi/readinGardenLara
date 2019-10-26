@@ -22,7 +22,9 @@ mix
    .sass('resources/sass/article.scss', 'public/css/article.css')
    .sass('resources/sass/header.scss', 'public/css/header.css')
    .sass('resources/sass/footer.scss', 'public/css/footer.css')
-
+   .sass('resources/sass/home/featured.scss', 'public/css/featured.css')
+   .sass('resources/sass/home/welcome.scss', 'public/css/welcome.css')
+   .sass('resources/sass/home/featured-members.scss', 'public/css/featured-members.css')
    .webpackConfig({
       module: {
             rules: [

@@ -10,7 +10,9 @@ class Article extends Model
     {
         return $this->get();
     }
-
+    public function featured_articles() {
+        return $this->where('is_featured', 1)->get();
+    }
     public function show($slug)
     {
         return $this::where('slug', $slug)->get();

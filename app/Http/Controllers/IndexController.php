@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Article;
 
 class IndexController extends Controller
 {
@@ -23,6 +23,13 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $articles = (new Article)->index();
+        $article_left = $articles->last();
+        $article_center1 = $articles[count($articles) - 2];
+        $article_center2 = $articles[count($articles) - 3];
+        $article_right = $articles[count($articles) - 4];
+        $articles_featured = (new Article)->featured_articles();
+
+        return view('index', compact('article_left', 'article_center1', 'article_center2', 'article_right', 'articles_featured'));
     }
 }
