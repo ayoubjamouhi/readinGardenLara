@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
+use App\Post;
 use Illuminate\Http\Request;
 
-class ArticleController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return (new Article)->index();
+        return (new Post)->index();
     }
 
     /**
@@ -51,7 +51,7 @@ class ArticleController extends Controller
      */
     public function show($slug)
     {
-        return (new Article)->show($slug);
+        return (new Post)->show($slug);
     }
 
     /**
@@ -90,14 +90,14 @@ class ArticleController extends Controller
 
     public function getArticle($slug)
     {
-        $post = (new Article)->show($slug)[0];
+        $post = (new Post)->show($slug)[0];
         //dd($post[0]->id);
         return view('article', compact('slug', 'post'));
     }
 
     public function indexBlog()
     {
-        $articles = (new Article)->index();
+        $articles = (new Post)->index();
         return view('blog', compact('articles'));
     }
     public function myPosts()

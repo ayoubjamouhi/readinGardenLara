@@ -10,11 +10,15 @@ Route::resource('contact', 'ContactController');
 Route::get('/privacy-policy', 'PrivacyController@index');
 // About us
 Route::get('/about-us', 'AboutController@index');
-// Articles
-Route::resource('articles', 'ArticleController')->middleware('auth', ['only' => 'store']);
-// Article
-Route::get('/myposts', 'ArticleController@myPosts');
-Route::get('/{slug}', 'ArticleController@getArticle');
+// posts
+Route::resource('posts', 'PostController')->middleware('auth', ['only' => 'store']);
+// post
+// add posts
+Route::get('/myposts', 'PostController@myPosts');
+//log out
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('/{slug}', 'PostController@getArticle');
 
 //Route::get('/article/get/{slug}', 'ArticleController@show');
 
