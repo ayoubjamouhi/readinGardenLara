@@ -33,9 +33,14 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $create = Article::create(request()->all());
+        if (!$create) {
+            return response()->json(['success' => false]);
+        }
+
+        return response()->json(['success' => true]);
     }
 
     /**
@@ -92,6 +97,11 @@ class ArticleController extends Controller
 
     public function indexBlog()
     {
-        return view('blog');
+        $articles = (new Article)->index();
+        return view('blog', compact('articles'));
+    }
+    public function myPosts()
+    {
+        return view('myposts');
     }
 }

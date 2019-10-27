@@ -1,0 +1,454 @@
+section.posts .posts--top {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 10px;
+  border-bottom: 2px solid #CCC;
+}
+
+section.posts .posts--top h2 {
+  padding-bottom: 15px;
+}
+
+section.posts .posts--top a {
+  text-align: right;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.54);
+  fill: rgba(0, 0, 0, 0.54);
+}
+
+section.posts .left .posts .post {
+  margin: 10px 0;
+}
+
+section.posts .left .posts .post .col-img {
+  padding: 0;
+}
+
+section.posts .left .posts .post .col-img img {
+  width: 100%;
+  height: 100px;
+}
+
+section.posts .left .posts .post h1 {
+  padding-right: 60px;
+  line-height: 0.9;
+}
+
+section.posts .left .posts .post h1 a {
+  font-size: 24px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.84);
+}
+
+section.posts .left .posts .post h1 a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+section.posts .left .posts .post h2.desc {
+  font-style: normal;
+  letter-spacing: 0;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(61, 56, 56, 0.54);
+}
+
+section.posts .left .posts .post h6.author a {
+  color: #464646;
+  font-style: normal;
+}
+
+section.posts .left .posts .post h6.author a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+section.posts .left .posts .post h6.date {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+section.posts .right h2.top {
+  border-bottom: 2px solid #CCC;
+  padding-bottom: 23px;
+}
+
+section.posts .right div.posts div.post {
+  margin: 10px;
+}
+
+section.posts .right div.posts div.post div.left span {
+  font-size: 34px;
+  color: rgba(0, 0, 0, 0.15);
+}
+
+section.posts .right div.posts div.post div.right h1 {
+  font-size: 18px !important;
+  line-height: 20px !important;
+}
+
+section.posts .right div.posts div.post div.right h1 a {
+  color: rgba(0, 0, 0, 0.84);
+  font-weight: bold;
+}
+
+section.posts .right div.posts div.post div.right h5.author--categorie {
+  font-size: 14px;
+}
+
+section.posts .right div.posts div.post div.right h5.author--categorie a {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+section.posts .right div.posts div.post div.right h5.author--categorie a:hover {
+  color: rgba(0, 0, 0, 0.9);
+  text-decoration: underline;
+}
+
+section.posts .right div.posts div.post div.right h6.date {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1200px) {
+  section.posts .left .posts--top {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 10px;
+    border-bottom: 2px solid #CCC;
+  }
+
+  section.posts .left .posts--top h2 {
+    padding-bottom: 15px;
+  }
+
+  section.posts .left .posts--top a {
+    text-align: right;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.54);
+    fill: rgba(0, 0, 0, 0.54);
+  }
+
+  section.posts .left .posts .post {
+    margin: 10px 0;
+  }
+
+  section.posts .left .posts .post .col-img {
+    padding: 0;
+  }
+
+  section.posts .left .posts .post .col-img img {
+    width: 100%;
+    height: 100px;
+  }
+
+  section.posts .left .posts .post h1 {
+    padding-right: 60px;
+    line-height: 0.9;
+  }
+
+  section.posts .left .posts .post h1 a {
+    font-size: 24px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.84);
+  }
+
+  section.posts .left .posts .post h1 a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  section.posts .left .posts .post h2.desc {
+    font-style: normal;
+    letter-spacing: 0;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(61, 56, 56, 0.54);
+  }
+
+  section.posts .left .posts .post h6.author a {
+    color: #464646;
+    font-style: normal;
+  }
+
+  section.posts .left .posts .post h6.author a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  section.posts .left .posts .post h6.date {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  section.posts .right h2.top {
+    border-bottom: 2px solid #CCC;
+    padding-bottom: 23px;
+  }
+
+  section.posts .right div.posts div.post {
+    margin: 10px;
+  }
+
+  section.posts .right div.posts div.post div.left span {
+    font-size: 34px;
+    color: rgba(0, 0, 0, 0.15);
+  }
+
+  section.posts .right div.posts div.post div.right h1 {
+    font-size: 18px !important;
+    line-height: 20px !important;
+  }
+
+  section.posts .right div.posts div.post div.right h1 a {
+    color: rgba(0, 0, 0, 0.84);
+    font-weight: bold;
+  }
+
+  section.posts .right div.posts div.post div.right h5.author--categorie {
+    font-size: 14px;
+  }
+
+  section.posts .right div.posts div.post div.right h5.author--categorie a {
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  section.posts .right div.posts div.post div.right h5.author--categorie a:hover {
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: underline;
+  }
+
+  section.posts .right div.posts div.post div.right h6.date {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (max-width: 576px) {
+  section.posts .left .posts--top {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 10px;
+    border-bottom: 2px solid #CCC;
+  }
+
+  section.posts .left .posts--top h2 {
+    padding-bottom: 15px;
+  }
+
+  section.posts .left .posts--top a {
+    text-align: right;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.54);
+    fill: rgba(0, 0, 0, 0.54);
+  }
+
+  section.posts .left .posts .post {
+    margin: 10px 0;
+  }
+
+  section.posts .left .posts .post .col-img {
+    padding: 0;
+  }
+
+  section.posts .left .posts .post .col-img img {
+    width: 100%;
+    height: 100px;
+  }
+
+  section.posts .left .posts .post h1 {
+    padding-right: 0;
+    line-height: 0.8;
+  }
+
+  section.posts .left .posts .post h1 a {
+    font-size: 21px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.84);
+  }
+
+  section.posts .left .posts .post h1 a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  section.posts .left .posts .post h2.desc {
+    font-style: normal;
+    letter-spacing: 0;
+    font-size: 15px;
+    line-height: 20px;
+    color: rgba(61, 56, 56, 0.54);
+  }
+
+  section.posts .left .posts .post h6.author a {
+    color: #464646;
+    font-style: normal;
+  }
+
+  section.posts .left .posts .post h6.author a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  section.posts .left .posts .post h6.date {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  section.posts .right h2.top {
+    border-bottom: 2px solid #CCC;
+    padding-bottom: 23px;
+  }
+
+  section.posts .right div.posts div.post {
+    margin: 10px;
+  }
+
+  section.posts .right div.posts div.post div.left span {
+    font-size: 34px;
+    color: rgba(0, 0, 0, 0.15);
+  }
+
+  section.posts .right div.posts div.post div.right h1 {
+    font-size: 18px !important;
+    line-height: 20px !important;
+  }
+
+  section.posts .right div.posts div.post div.right h1 a {
+    color: rgba(0, 0, 0, 0.84);
+    font-weight: bold;
+  }
+
+  section.posts .right div.posts div.post div.right h5.author--categorie {
+    font-size: 14px;
+  }
+
+  section.posts .right div.posts div.post div.right h5.author--categorie a {
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  section.posts .right div.posts div.post div.right h5.author--categorie a:hover {
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: underline;
+  }
+
+  section.posts .right div.posts div.post div.right h6.date {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (max-width: 320px) {
+  section.posts .left .posts--top {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 10px;
+    border-bottom: 2px solid #CCC;
+  }
+
+  section.posts .left .posts--top h2 {
+    padding-bottom: 15px;
+  }
+
+  section.posts .left .posts--top a {
+    text-align: right;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.54);
+    fill: rgba(0, 0, 0, 0.54);
+  }
+
+  section.posts .left .posts .post {
+    margin: 10px 0;
+  }
+
+  section.posts .left .posts .post .col-img {
+    padding: 0;
+  }
+
+  section.posts .left .posts .post .col-img img {
+    width: 100%;
+    height: 100px;
+  }
+
+  section.posts .left .posts .post h1 {
+    padding-right: 0;
+    line-height: 0.8;
+  }
+
+  section.posts .left .posts .post h1 a {
+    font-size: 21px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.84);
+  }
+
+  section.posts .left .posts .post h1 a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  section.posts .left .posts .post h2.desc {
+    font-style: normal;
+    letter-spacing: 0;
+    font-size: 15px;
+    line-height: 20px;
+    color: rgba(61, 56, 56, 0.54);
+  }
+
+  section.posts .left .posts .post h6.author a {
+    color: #464646;
+    font-style: normal;
+  }
+
+  section.posts .left .posts .post h6.author a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  section.posts .left .posts .post h6.date {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  section.posts .right h2.top {
+    border-bottom: 2px solid #CCC;
+    padding-bottom: 23px;
+  }
+
+  section.posts .right div.posts div.post {
+    margin: 10px;
+  }
+
+  section.posts .right div.posts div.post div.left span {
+    font-size: 34px;
+    color: rgba(0, 0, 0, 0.15);
+  }
+
+  section.posts .right div.posts div.post div.right h1 {
+    font-size: 18px !important;
+    line-height: 20px !important;
+  }
+
+  section.posts .right div.posts div.post div.right h1 a {
+    color: rgba(0, 0, 0, 0.84);
+    font-weight: bold;
+  }
+
+  section.posts .right div.posts div.post div.right h5.author--categorie {
+    font-size: 14px;
+  }
+
+  section.posts .right div.posts div.post div.right h5.author--categorie a {
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  section.posts .right div.posts div.post div.right h5.author--categorie a:hover {
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: underline;
+  }
+
+  section.posts .right div.posts div.post div.right h6.date {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+

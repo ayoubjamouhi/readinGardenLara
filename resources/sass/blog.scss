@@ -1,4 +1,4 @@
-@import '../../../components/layouts/variables';
+@import 'variables';
 section.posts {
     .posts--top {
         display: grid;
@@ -19,6 +19,7 @@ section.posts {
         }
     }
     .left {
+
         .posts {
             .post {
                 margin: 10px 0;

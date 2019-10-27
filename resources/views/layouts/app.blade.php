@@ -40,6 +40,17 @@
                 <li class="nav-item">
                     <a href="/contact" class="nav-link">CONTACT US</a>
                 </li>
+                @if(Auth::check())
+                  <li class="nav-item">
+                      <a href="/me" class="nav-link">my account</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/myposts" class="nav-link">my posts</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/logout" class="nav-link">logout</a>
+                  </li>
+                @endif
             </ul>
           </div>
         </nav>
@@ -71,6 +82,7 @@
       </footer>
 
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    @yield('script')
 </body>
 
 </html>

@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    protected $guarded = [];
     public function index()
     {
         return $this->get();
     }
-    public function featured_articles() {
+    public function featured_articles()
+    {
         return $this->where('is_featured', 1)->get();
     }
     public function show($slug)

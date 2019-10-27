@@ -1,4 +1,4 @@
-@section('title', 'Page Title')
+@section('title',  $post->title )
 @extends('layouts.app')
 @section('css')
     <link rel="stylesheet" href="css/article.css" >
@@ -38,7 +38,7 @@
                                              <button>Follow</button>
                                           </div>
                                           <div class="date">
-                                          {{ $post->date }}
+                                          {{ $post->created_at->format('d/m/Y') }}
                                           </div>
 
                                        </div>
@@ -46,7 +46,7 @@
                               </div>
                               <div class="row article">
                                  <div class="col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9 col" >
-                                    {{!! $post->html !!}}
+                                    {!! $post->html !!}
                                  </div>
                                  <div  class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col">
                                     <div>Ad</div>

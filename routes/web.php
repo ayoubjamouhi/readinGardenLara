@@ -4,20 +4,22 @@ Auth::routes(['register' => false]);
 // Index
 Route::get('/', 'IndexController@index');
 Route::get('/blog', 'ArticleController@indexBlog');
-// Articles
-Route::resource('articles', 'ArticlController');
-// Article
-Route::get('/{slug}', 'ArticleController@getArticle');
-//Route::get('/article/get/{slug}', 'ArticleController@show');
 // Contacte
-/*Route::resource('contact', 'ContactController');
-// Home
-//Route::get('/home', 'HomeController@index')->name('home');
-// Blog
-Route::get('/blog', 'ArticleController@indexBlog');
+Route::resource('contact', 'ContactController');
 // Privacy Policy
 Route::get('/privacy-policy', 'PrivacyController@index');
 // About us
 Route::get('/about-us', 'AboutController@index');
+// Articles
+Route::resource('articles', 'ArticleController')->middleware('auth', ['only' => 'store']);
+// Article
+Route::get('/myposts', 'ArticleController@myPosts');
+Route::get('/{slug}', 'ArticleController@getArticle');
+
+//Route::get('/article/get/{slug}', 'ArticleController@show');
+
+// Home
+//Route::get('/home', 'HomeController@index')->name('home');
+
 // Admin
 //Route::resource('dashboard', 'DashboardController');*/

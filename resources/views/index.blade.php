@@ -1,4 +1,4 @@
-@section('title', 'Page Title')
+@section('title', 'Home')
 @extends('layouts.app')
 @section('css')
     <link rel="stylesheet" href="css/featured.css" />
@@ -27,7 +27,7 @@
                         <a href="#">{{ $article_left->user_id . " in " .$article_left->categorie }}</a>
                     </h6>
                     <h6 class="date">
-                    {{ $article_left->date }}
+                    {{ $article_left->created_at->format('d/m/Y') }}
                     </h6>
                 </div>
                 <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 center">
@@ -47,7 +47,7 @@
                             <a href="#">{{ $article_center1->user_id . " in " .$article_center1->categorie }}</a>
                         </h6>
                         <h6 class="date">
-                        {{ $article_center1->date }}
+                        {{ $article_center1->created_at->format('d/m/Y') }}
                         </h6>
                     </div>
                     <div>
@@ -66,7 +66,7 @@
                             <a href="#">{{ $article_center2->user_id . " in " .$article_center2->categorie }}</a>
                         </h6>
                         <h6 class="date">
-                        {{ $article_center2->date }}
+                        {{ $article_center2->created_at->format('d/m/Y') }}
                         </h6>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                             <a href="#">{{ $article_right->user_id . " in " .$article_right->categorie }}</a>
                         </h6>
                         <h6 class="date">
-                        {{ $article_right->date }}
+                        {{ $article_right->created_at->format('d/m/Y') }}
                         </h6>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                                           {{ $article->user_id}}
                                        </a>
                                     </h6>
-                                    <h6 class="date">{{ $article->date}}</h6>
+                                    <h6 class="date">{{ $article->created_at->format('d/m/Y')}}</h6>
                                  </div>
                                  <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-img">
                                     <a href={{"/" . $article->slug}}>
