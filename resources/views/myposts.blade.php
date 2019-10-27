@@ -4,17 +4,14 @@
     <link rel="stylesheet" href="css/article.css" >
 @endsection
 @section('main')
-
-<main style="padding-bottom: 10px">
-  <div class="container">
-      <div class="card">
-        <div class="card-header">
-            <strong>Gestion</strong> des Articles
-        </div>
-        <my-posts/>
+<div class="container" style="padding-bottom: 10px">
+    <div class="card">
+      <div class="card-header">
+          <strong>Gestion</strong> des Articles
       </div>
-  </div>
-</main>
+      <my-posts/>
+    </div>
+</div>
 @endsection
 @section('script')
     <script src="{{ asset('js/app.js') }}"></script>

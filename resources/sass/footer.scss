@@ -2,7 +2,7 @@
 
 footer {
    padding: 5px 0;
-   background-color: $yellow;
+   border-top: 1px solid $yellow;
    div.left {
       div.share {
          text-align: center;
@@ -16,10 +16,10 @@ footer {
    div.right {
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       span {
          text-align: right;
          color: $gris;
-         font-weight: bold;
       }
       div.pages {
          ul {

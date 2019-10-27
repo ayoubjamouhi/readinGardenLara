@@ -4,7 +4,7 @@
 
 @endsection
 @section('main')
-    <div id="root"></div>
+    <main id="root"></main>
 @endsection
 @section('script')
     <script src="{{ asset('js/About.js') }}"></script>

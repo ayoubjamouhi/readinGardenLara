@@ -22,6 +22,21 @@
 
     gtag('config', 'UA-131907762-1');
     </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700|Work+Sans:300,400,500,600,700,800,900');
+      html {
+        box-sizing: border-box;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        line-height: 2;
+        /*font-family: 'Work Sans';*/
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -56,12 +71,12 @@
         </nav>
       </header>
 
-    <div id="app">
+    <main id="app">
         @yield('main')
-    </div>
+    </main>
 
     <footer>
-        <div class="row">
+        <div class="row" style="width: 100%">
           <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 left">
             <div class="share">
               <a target="_blank" href="https://www.facebook.com/readingardencommunity/">
@@ -76,7 +91,7 @@
             </div>
           </div>
           <div class="col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9 right">
-            <span>By readinGarden 2019</span>
+            <span>jfnadev © 2019</span>
           </div>
         </div>
       </footer>
