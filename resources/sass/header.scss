@@ -22,6 +22,10 @@ header {
                     a {
                         text-transform: uppercase;
                         color: $gris !important;
+
+                    }
+                    a:hover{
+                        color:red !important;
                     }
                 }
             }

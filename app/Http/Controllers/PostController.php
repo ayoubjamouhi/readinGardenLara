@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Validator;
 
 class PostController extends Controller
 {
@@ -71,9 +73,42 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        $rules = array(
+            'title' => 'required',
+            'description' => 'required',
+            'categorie' => 'required',
+            'slug' => 'required',
+            'is_featured' => 'required|numeric',
+            'html' => 'required',
+            'user_id' => 'required',
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return response()->json(['success' => true]);
+        } else {
+            // store
+            $post = Post::find($id);
+            $post->title = Input::get('title');
+            $post->description = Input::get('description');
+            $post->categorie = Input::get('categorie');
+            $post->slug = Input::get('slug');
+            $post->credit = Input::get('credit');
+            $post->is_featured = Input::get('is_featured');
+            $post->html = Input::get('html');
+            $post->image = Input::get('image');
+            $post->largeImage = Input::get('largeImage');
+            $post->user_id = Input::get('user_id');
+
+            if (!$post->save()) {
+                return response()->json(['success' => false]);
+            }
+
+            return response()->json($post);
+        }
     }
 
     /**

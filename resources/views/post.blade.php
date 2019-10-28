@@ -26,7 +26,7 @@
                <div class="col-12 col-sm-11 col-md-11 col-lg-11 col-xl-11 right">
                   <div>Ad</div>
                   <h3 class="categorie">IN {{ $post->categorie }}</h3>
-                  <h1 class="title">{{ $post->title }}</h1>
+                  <h1 class="title">{{ $post->title }}</h1><a href={{"/post_update/" . $post->id }}>🖊</a>
                   <h2 class="description">{{ $post->descreption }}</h2>
                   <div class="user">
                      <div class="row">

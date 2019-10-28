@@ -2,39 +2,40 @@
   <form @submit="checkForm" method="post">
     <div class="card-body">
       <div class="row">
+        <img v-if="post.image" v-bind:src="post.image" />
         <div class="col-12">
           <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" name="title" id="title" v-model="title" />
+            <input type="text" name="title" id="title" v-model="post.title" />
           </div>
         </div>
         <div class="col-12">
           <div class="form-group">
             <label for="description">Description</label>
-            <input type="text" name="description" id="description" v-model="description" />
+            <input type="text" name="description" id="description" v-model="post.description" />
           </div>
         </div>
         <div class="col-12">
           <div class="form-group">
             <label for="categorie">Categorie</label>
-            <select name="categorie" id="categorie" v-model="categorie">
+            <select name="categorie" id="categorie" v-model="post.categorie">
               <option>--</option>
               <option value="javascript">Javascript</option>
-              <option value="healty">Health</option>
+              <option value="healthy">Healthy</option>
             </select>
           </div>
         </div>
         <div class="col-12">
           <div class="form-group">
             <label for="slug">Slug</label>
-            <input type="text" name="slug" id="slug" v-model="slug" />
+            <input type="text" name="slug" id="slug" v-model="post.slug" />
           </div>
         </div>
 
         <div class="col-12">
           <div class="form-group">
             <label for="is_featured">is Featured</label>
-            <select name="is_featured" id="is_featured" v-model="is_featured">
+            <select name="is_featured" id="is_featured" v-model="post.is_featured">
               <option>--</option>
               <option value="1">Yes</option>}
               <option value="0">No</option>
@@ -56,20 +57,20 @@
         <div class="col-12">
           <div class="form-group">
             <label for="credit">Credit</label>
-            <input type="text" name="credit" id="credit" v-model="credit" />
+            <input type="text" name="credit" id="credit" v-model="post.credit" />
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-12">
           <label>HTML</label>
-          <textarea name="html" id="html" v-model="html"></textarea>
+          <textarea name="html" id="html" v-model="post.html"></textarea>
         </div>
       </div>
     </div>
     <div class="card-footer">
       <button type="submit" size="sm" color="success">
-        <i class="fa fa-dot-circle-o"></i> Sauvegarder
+        <i class="fa fa-dot-circle-o"></i> Update
       </button>
       <button type="reset" size="sm" color="danger">
         <i class="fa fa-ban"></i> Vider
@@ -77,25 +78,85 @@
     </div>
   </form>
 </template>
-
+<style lang="scss">
+form {
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.02);
+  border: 5px solid white;
+  padding: 20px;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 600;
+  img {
+    width: 300px;
+    height: 250px;
+    margin: 0 auto;
+  }
+  label {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid black;
+    &:focus {
+      outline: 0;
+      border-color: red;
+    }
+  }
+  textarea {
+    height: 350px;
+    width: 100%;
+  }
+  button,
+  input[type="submit"] {
+    width: auto;
+    background: red;
+    color: white;
+    border: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+  }
+  input[type="radio"] {
+    width: auto;
+  }
+  fieldset {
+    border: 0;
+    padding: 0;
+    &[disabled] {
+      opacity: 0.5;
+    }
+    &::before {
+      height: 10px;
+      content: "";
+      display: block;
+      background-image: linear-gradient(
+        to right,
+        #ff3019 0%,
+        #e2b04a 50%,
+        #ff3019 100%
+      );
+    }
+    &[aria-busy="true"]::before {
+      background-size: 50% auto;
+      animation: true 0.5s linear infinite;
+    }
+  }
+}
+</style>
 <script>
 export default {
-  props: ["post"],
-  mounted() {
-    console.log(JSON.parse(this.post));
-  },
+  props: ["myPost"],
+  mounted() {},
   data() {
     return {
       errors: [],
-      title: "Title",
-      description: "Description",
-      categorie: "javascript",
-      slug: "slug",
-      credit: "credit",
-      is_featured: 0,
-      html: "<p>Html</p>",
-      image: null,
-      largeImage: null
+      post: this.myPost
     };
   },
   methods: {
@@ -104,24 +165,30 @@ export default {
 
       this.errors = [];
 
-      if (!this.title || !this.title || !this.title || !this.title) {
+      if (
+        !this.post.title ||
+        !this.post.description ||
+        !this.post.categorie ||
+        !this.post.slug
+      ) {
         this.errors.push("Name required.");
       }
+      if (this.errors.length != 0) return alert("Check errors");
       const data = {
-        title: this.title,
-        description: this.description,
-        categorie: this.categorie,
-        slug: this.slug,
-        credit: this.credit,
-        is_featured: this.is_featured,
-        html: this.html,
-        image: this.image,
-        largeImage: this.largeImage,
+        title: this.post.title,
+        description: this.post.description,
+        categorie: this.post.categorie,
+        slug: this.post.slug,
+        credit: this.post.credit,
+        is_featured: this.post.is_featured,
+        html: this.post.html,
+        image: this.post.image,
+        largeImage: this.post.largeImage,
         user_id: "admin"
       };
-
+      console.log(data);
       axios
-        .post("/posts", data)
+        .put(`/posts/${this.post.id}`, data)
         .then(function(response) {
           window.location.href = "/" + response.data.slug;
         })
@@ -143,8 +210,17 @@ export default {
       );
       const file = await res.json();
 
-      this.image = file.secure_url;
-      this.largeImage = file.eager[0].secure_url;
+      this.post.image = file.secure_url;
+      this.post.largeImage = file.eager[0].secure_url;
+    },
+    handle(e) {
+      e.preventDefault();
+    }
+  },
+  watch: {
+    post: {
+      handler() {},
+      deep: true
     }
   }
 };

@@ -63,7 +63,7 @@
                       <a href="/post_manage" class="nav-link">post</a>
                   </li>
                   <li class="nav-item">
-                      <a href="/logout" class="nav-link">logout</a>
+                      <a href="/logout" class="nav-link">logout {{ Auth::user()->name }}</a>
                   </li>
                 @endif
             </ul>

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/featured-members.css" />
 @endsection
 @section('main')
+
 <div class="container">
     <section class="featured">
         <div class="wave"></div>
@@ -43,6 +44,7 @@
                         <a href={{"/". $article_right->slug}}>
                             {{ $article_center1->title }}
                         </a>
+                        <a href={{"/post_update/" . $article_center1->id }}>🖊</a>
                     </h1>
                     <h2 class="desc">
                             {{ $article_center1->description }}
@@ -64,6 +66,7 @@
                         <a href={{"/". $article_right->slug}}>
                             {{ $article_center2->title }}
                         </a>
+                        <a href={{"/post_update/" . $article_center2->id }}>🖊</a>
                     </h1>
                     <h2 class="desc">
                             {{ $article_center2->description }}
@@ -86,6 +89,7 @@
                         <a href={{"/". $article_right->slug}}>
                             {{ $article_right->title }}
                         </a>
+                        <a href={{"/post_update/" . $article_right->id }}>🖊</a>
                     </h1>
                     <h2 class="desc">
                             {{ $article_right->description }}
@@ -130,6 +134,7 @@
                                     <a href={{"/" . $article->slug}}>
                                         {{ $article->title}}
                                     </a>
+                                    <a href={{"/post_update/" . $article->id }}>🖊</a>
                                 </h1>
                                 <h2 class="desc">{{ $article->description}}</h2>
                                 <h6 class="author">

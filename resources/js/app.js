@@ -33,3 +33,7 @@ const app = new Vue({
     el: '#app',
     data: {}
 });
+
+$(document).ready(function() {
+    $('#html').summernote();
+});

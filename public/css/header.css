@@ -14,6 +14,10 @@ header nav div.collapse ul li a {
   color: #464646 !important;
 }
 
+header nav div.collapse ul li a:hover {
+  color: red !important;
+}
+
 @media (max-width: 1200px) {
   header {
     background-color: #ffc600;
