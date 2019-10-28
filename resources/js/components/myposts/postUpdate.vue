@@ -80,7 +80,10 @@
 
 <script>
 export default {
-  mounted() {},
+  props: ["post"],
+  mounted() {
+    console.log(JSON.parse(this.post));
+  },
   data() {
     return {
       errors: [],

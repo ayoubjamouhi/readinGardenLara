@@ -15,7 +15,7 @@ Route::resource('posts', 'PostController')->middleware('auth', ['only' => 'store
 // post
 // add posts
 Route::get('/post_manage', 'PostController@postManage')->middleware('auth');
-Route::get('/post_update', 'PostController@postUpdate')->middleware('auth');
+Route::get('/post_update/{id}', 'PostController@postUpdate')->where('id', '[0-9]+')->middleware('auth');
 //log out
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 

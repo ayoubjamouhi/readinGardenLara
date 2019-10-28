@@ -1,4 +1,4 @@
-@section('title',  'Add post' )
+@section('title',  'Update post' )
 @extends('layouts.app')
 @section('css')
 @endsection
@@ -8,7 +8,8 @@
       <div class="card-header">
           <strong>Gestion</strong> des Articles
       </div>
-      <my-posts/>
+
+      <post-update post="'{{$post}}'"/>
     </div>
 </div>
 @endsection

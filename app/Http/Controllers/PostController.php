@@ -16,7 +16,6 @@ class PostController extends Controller
     {
         return (new Post)->index();
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -104,8 +103,9 @@ class PostController extends Controller
     {
         return view('postmanage');
     }
-    public function postUpdate()
+    public function postUpdate($id)
     {
-        return view('postupdate');
+        $post = json_encode((new Post)->getById($id));
+        return view('postupdate', compact('post'));
     }
 }

@@ -20,6 +20,7 @@
                     <a href={{"/". $article_left->slug}}>
                         {{ $article_left->title }}
                     </a>
+                    <a href={{"/post_update/" . $article_left->id }}>🖊</a>
                 </h1>
                 <h2 class="desc">
                         {{ $article_left->description }}
