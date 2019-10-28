@@ -44,7 +44,13 @@
         <div class="col-12">
           <div class="form-group">
             <label for="image">image</label>
-            <input type="file" name="image" id="image" />
+            <input
+              type="file"
+              name="file"
+              id="image"
+              @change="uploadFile"
+              placeholder="Upload an Image"
+            />
           </div>
         </div>
         <div class="col-12">
@@ -84,17 +90,18 @@ export default {
       slug: "slug",
       credit: "credit",
       is_featured: 0,
-      html: "<p>Html</p>"
+      html: "<p>Html</p>",
+      image: null,
+      largeImage: null
     };
   },
   methods: {
-    checkForm: function(e) {
+    checkForm(e) {
       e.preventDefault();
-      console.log(this.title);
 
       this.errors = [];
 
-      if (!this.title) {
+      if (!this.title || !this.title || !this.title || !this.title) {
         this.errors.push("Name required.");
       }
       const data = {
@@ -105,18 +112,36 @@ export default {
         credit: this.credit,
         is_featured: this.is_featured,
         html: this.html,
-        image_id: "image",
+        image: this.image,
+        largeImage: this.largeImage,
         user_id: "admin"
       };
-      console.log(data);
+
       axios
-        .post("/articles", data)
+        .post("/posts", data)
         .then(function(response) {
-          console.log(response);
+          window.location.href = "/" + response.data.slug;
         })
         .catch(function(error) {
-          console.log(error);
+          alert(error.message);
         });
+    },
+    uploadFile: async function(e) {
+      const { files } = e.target;
+      const data = new FormData();
+      data.append("file", files[0]);
+      data.append("upload_preset", "readingarden_lara");
+      const res = await fetch(
+        "https://api.cloudinary.com/v1_1/dzgho0ttb/image/upload",
+        {
+          method: "POST",
+          body: data
+        }
+      );
+      const file = await res.json();
+
+      this.image = file.secure_url;
+      this.largeImage = file.eager[0].secure_url;
     }
   }
 };

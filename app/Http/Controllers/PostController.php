@@ -35,12 +35,12 @@ class PostController extends Controller
      */
     public function store()
     {
-        $create = Article::create(request()->all());
+        $create = Post::create(request()->all());
         if (!$create) {
             return response()->json(['success' => false]);
         }
 
-        return response()->json(['success' => true]);
+        return response()->json(request()->all());
     }
 
     /**
@@ -92,7 +92,7 @@ class PostController extends Controller
     {
         $post = (new Post)->show($slug)[0];
         //dd($post[0]->id);
-        return view('article', compact('slug', 'post'));
+        return view('post', compact('slug', 'post'));
     }
 
     public function indexBlog()
@@ -100,8 +100,12 @@ class PostController extends Controller
         $articles = (new Post)->index();
         return view('blog', compact('articles'));
     }
-    public function myPosts()
+    public function postManage()
     {
-        return view('myposts');
+        return view('postmanage');
+    }
+    public function postUpdate()
+    {
+        return view('postupdate');
     }
 }

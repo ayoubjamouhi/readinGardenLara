@@ -6,10 +6,12 @@
 @section('main')
 <div class="container">
    <section class="post">
+         @if($post->largeImage != null)
          <div class="image--top">
-               <img src={{ "images/" . $post->image_id }} alt="img" />
+               <img src={{ $post->largeImage }} alt="img" />
                <p class="credit">Credit: {{ $post->credit }}</p>
          </div>
+         @endif
          <div class="row bottom">
                <div class="col-12 col-sm-1 col-md-1 col-lg-1 col-xl-1 left">
                   <div class="share">

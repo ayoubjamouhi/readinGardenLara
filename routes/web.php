@@ -3,7 +3,7 @@
 Auth::routes(['register' => false]);
 // Index
 Route::get('/', 'IndexController@index');
-Route::get('/blog', 'ArticleController@indexBlog');
+Route::get('/blog', 'PostController@indexBlog');
 // Contacte
 Route::resource('contact', 'ContactController');
 // Privacy Policy
@@ -14,7 +14,8 @@ Route::get('/about-us', 'AboutController@index');
 Route::resource('posts', 'PostController')->middleware('auth', ['only' => 'store']);
 // post
 // add posts
-Route::get('/myposts', 'PostController@myPosts');
+Route::get('/post_manage', 'PostController@postManage')->middleware('auth');
+Route::get('/post_update', 'PostController@postUpdate')->middleware('auth');
 //log out
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 

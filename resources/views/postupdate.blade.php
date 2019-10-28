@@ -1,7 +1,6 @@
 @section('title',  'Add post' )
 @extends('layouts.app')
 @section('css')
-    <link rel="stylesheet" href="css/article.css" >
 @endsection
 @section('main')
 <div class="container" style="padding-bottom: 10px">

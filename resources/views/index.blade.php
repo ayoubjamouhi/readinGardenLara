@@ -11,9 +11,11 @@
         <div class="wave"></div>
         <div class="row">
             <div class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 left">
+            @if($article_left->image != null)
                 <a href={{"/". $article_left->slug}}>
-                    <img src={{ "images/" .$article_left->image_id }} alt="img" />
+                    <img src={{ $article_left->image }} alt="img" />
                 </a>
+            @endif
                 <h1>
                     <a href={{"/". $article_left->slug}}>
                         {{ $article_left->title }}
@@ -31,9 +33,11 @@
             </div>
             <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 center">
                 <div>
+                @if($article_center1->image != null)
                     <a href={{"/". $article_center1->slug}}>
-                        <img src={{ "images/" .$article_center1->image_id }} alt="img" />
+                        <img src={{ $article_center1->image }} alt="img" />
                     </a>
+                @endif
                     <h1>
                         <a href={{"/". $article_right->slug}}>
                             {{ $article_center1->title }}
@@ -50,9 +54,11 @@
                     </h6>
                 </div>
                 <div>
+                @if($article_center2->image != null)
                     <a href={{"/". $article_center2->slug}}>
-                        <img src={{ "images/" .$article_center2->image_id }} alt="img" />
+                        <img src={{ $article_center2->image }} alt="img" />
                     </a>
+                @endif
                     <h1>
                         <a href={{"/". $article_right->slug}}>
                             {{ $article_center2->title }}
@@ -70,9 +76,11 @@
                 </div>
             </div>
             <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 right">
+                @if($article_right->image != null)
                     <a href={{"/". $article_right->slug}}>
-                        <img src={{ "images/" .$article_right->image_id }} alt="img" />
+                        <img src={{ $article_right->image }} alt="img" />
                     </a>
+                @endif
                     <h1>
                         <a href={{"/". $article_right->slug}}>
                             {{ $article_right->title }}
@@ -131,9 +139,11 @@
                                 <h6 class="date">{{ $article->created_at->format('d/m/Y')}}</h6>
                                 </div>
                                 <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-img">
+                            @if($article->image != null)
                                 <a href={{"/" . $article->slug}}>
-                                    <img src={{'images/' . $article->image_id}} alt="img" />
+                                    <img src={{ $article->image}} alt="img" />
                                 </a>
+                            @endif
                                 </div>
                             </div>
                     @endforeach

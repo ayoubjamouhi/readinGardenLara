@@ -60,7 +60,7 @@
                       <a href="/me" class="nav-link">my account</a>
                   </li>
                   <li class="nav-item">
-                      <a href="/myposts" class="nav-link">my posts</a>
+                      <a href="/post_manage" class="nav-link">post</a>
                   </li>
                   <li class="nav-item">
                       <a href="/logout" class="nav-link">logout</a>
