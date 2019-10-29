@@ -34,6 +34,6 @@ const app = new Vue({
     data: {}
 });
 
-$(document).ready(function() {
+/*$(document).ready(function() {
     $('#html').summernote();
-});
+});*/

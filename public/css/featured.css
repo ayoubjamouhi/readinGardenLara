@@ -5,6 +5,7 @@ section.featured {
 
 section.featured img {
   width: 100%;
+  height: 190px;
 }
 
 section.featured .wave {

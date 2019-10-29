@@ -64,7 +64,7 @@
       <div class="row">
         <div class="col-md-12">
           <label>HTML</label>
-          <textarea name="html" id="html" v-model="post.html"></textarea>
+          <vue-editor v-model="post.html"></vue-editor>
         </div>
       </div>
     </div>
@@ -78,7 +78,94 @@
     </div>
   </form>
 </template>
+
+<script>
+import { VueEditor } from "vue2-editor";
+
+export default {
+  props: ["myPost"],
+  components: {
+    VueEditor
+  },
+  data() {
+    return {
+      errors: [],
+      post: this.myPost,
+      content: "<h1>Hy</h1>"
+    };
+  },
+  methods: {
+    checkForm(e) {
+      e.preventDefault();
+
+      this.errors = [];
+
+      if (
+        !this.post.title ||
+        !this.post.description ||
+        !this.post.categorie ||
+        !this.post.slug
+      ) {
+        this.errors.push("Name required.");
+      }
+      if (this.errors.length != 0) return alert("Check errors");
+      const data = {
+        title: this.post.title,
+        description: this.post.description,
+        categorie: this.post.categorie,
+        slug: this.post.slug,
+        credit: this.post.credit,
+        is_featured: this.post.is_featured,
+        html: this.post.html,
+        image: this.post.image,
+        largeImage: this.post.largeImage,
+        user_id: "admin"
+      };
+
+      axios
+        .put(`/posts/${this.post.id}`, data)
+        .then(function(response) {
+          window.location.href = "/" + response.data.slug;
+        })
+        .catch(function(error) {
+          alert(error.message);
+        });
+    },
+    uploadFile: async function(e) {
+      const { files } = e.target;
+      const data = new FormData();
+      data.append("file", files[0]);
+      data.append("upload_preset", "readingarden_lara");
+      const res = await fetch(
+        "https://api.cloudinary.com/v1_1/dzgho0ttb/image/upload",
+        {
+          method: "POST",
+          body: data
+        }
+      );
+      const file = await res.json();
+
+      this.post.image = file.secure_url;
+      this.post.largeImage = file.eager[0].secure_url;
+    },
+    changeTextarea(e) {
+      e.preventDefault();
+      console.log(e);
+    }
+  },
+  watch: {
+    post: {
+      handler() {},
+      deep: true
+    }
+  },
+  mounted: function() {}
+};
+</script>
+
 <style lang="scss">
+@import "~vue2-editor/dist/vue2-editor.css";
+
 form {
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
   background: rgba(0, 0, 0, 0.02);
@@ -149,79 +236,3 @@ form {
   }
 }
 </style>
-<script>
-export default {
-  props: ["myPost"],
-  mounted() {},
-  data() {
-    return {
-      errors: [],
-      post: this.myPost
-    };
-  },
-  methods: {
-    checkForm(e) {
-      e.preventDefault();
-
-      this.errors = [];
-
-      if (
-        !this.post.title ||
-        !this.post.description ||
-        !this.post.categorie ||
-        !this.post.slug
-      ) {
-        this.errors.push("Name required.");
-      }
-      if (this.errors.length != 0) return alert("Check errors");
-      const data = {
-        title: this.post.title,
-        description: this.post.description,
-        categorie: this.post.categorie,
-        slug: this.post.slug,
-        credit: this.post.credit,
-        is_featured: this.post.is_featured,
-        html: this.post.html,
-        image: this.post.image,
-        largeImage: this.post.largeImage,
-        user_id: "admin"
-      };
-      console.log(data);
-      axios
-        .put(`/posts/${this.post.id}`, data)
-        .then(function(response) {
-          window.location.href = "/" + response.data.slug;
-        })
-        .catch(function(error) {
-          alert(error.message);
-        });
-    },
-    uploadFile: async function(e) {
-      const { files } = e.target;
-      const data = new FormData();
-      data.append("file", files[0]);
-      data.append("upload_preset", "readingarden_lara");
-      const res = await fetch(
-        "https://api.cloudinary.com/v1_1/dzgho0ttb/image/upload",
-        {
-          method: "POST",
-          body: data
-        }
-      );
-      const file = await res.json();
-
-      this.post.image = file.secure_url;
-      this.post.largeImage = file.eager[0].secure_url;
-    },
-    handle(e) {
-      e.preventDefault();
-    }
-  },
-  watch: {
-    post: {
-      handler() {},
-      deep: true
-    }
-  }
-};
-</script>

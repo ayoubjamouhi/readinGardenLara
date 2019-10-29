@@ -1,0 +1,491 @@
+@import 'variables';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+section.post {
+    padding-bottom: 20px;
+    div.image--top {
+        margin-top: 10px;
+        img {
+            width: 100%;
+            height: 500px;
+        }
+        p.credit {
+            text-align: center;
+            margin-bottom: 30px;
+            color: rgba(0,0,0,.54);
+            font-size: 16px;
+        }
+    }
+    div.left {
+        div.share {
+            a {
+                display: block;
+                text-align: center;
+                font-size: 25px;
+                margin-bottom: 10px;
+                color: black
+            }
+
+        }
+    }
+    div.right {
+        h3.categorie {
+            text-transform: uppercase;
+            color: #ffc600;
+            padding-top: 30px;
+        }
+        h1.title {
+            font-family: 'Roboto', sans-serif;
+            margin: 20px 0;
+            color: #000;
+            background-size: auto 6px;
+            display: inline-block;
+            text-shadow: 1px 0px black;
+        }
+        h2.description {
+            color: $gris;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+        div.user {
+            div.image {
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%
+                }
+            }
+            div.info {
+                margin-bottom: 30px;
+                div.name--follow {
+                    display: inline;
+                    h6 {
+                        display: inline;
+                        margin-right: 5px;
+                    }
+                    button {
+                        background: none;
+                        border: 1px solid #ccc;
+                        border-radius: 5px
+                    }
+                }
+                div.date {
+                    color: $gris
+                }
+            }
+        }
+        article {
+            font-size: 22px;
+            color: $article;
+            font-family: 'Roboto', sans-serif;
+            img {
+                width: 100%;
+            }
+            p {
+
+            }
+        }
+    }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1200px) {
+    section.post {
+        div.image--top {
+            margin-top: 10px;
+            img {
+                width: 100%;
+            }
+            p.credit {
+                text-align: center;
+                margin-bottom: 30px;
+                color: rgba(0,0,0,.54);
+                font-size: 16px;
+            }
+        }
+        div.left {
+            div.share {
+                a{
+                    i {
+                        display: block;
+                        text-align: center;
+                        font-size: 25px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+        div.right {
+            h3.categorie {
+                text-transform: uppercase;
+                color: #1abebf;
+            }
+            h1.title {
+                font-family: Arial;
+                margin: 20px 0;
+            }
+            h2.description {
+                color: $gris;
+                font-size: 17px;
+                margin-bottom: 30px;
+            }
+            div.user {
+                div.image {
+                    img {
+                        width: 100%
+                    }
+                }
+                div.info {
+                    margin-bottom: 30px;
+                    div.name--follow {
+                        display: inline;
+                        h6 {
+                            display: inline;
+                            margin-right: 5px;
+                        }
+                        button {
+                            background: none;
+                            border: 1px solid #ccc;
+                            border-radius: 5px
+                        }
+                    }
+                    div.date {
+                        color: $gris
+                    }
+                }
+            }
+            article {
+                font-size: 22px;
+                color: $article;
+                font-family: 'Roboto', sans-serif;
+                p {
+
+                }
+            }
+        }
+    }
+}
+// Large devices (desktops, 992px and up)
+@media (max-width: 992px) {
+    section.post {
+        div.image--top {
+            margin-top: 10px;
+            img {
+                width: 100%;
+            }
+            p.credit {
+                text-align: center;
+                margin-bottom: 30px;
+                color: rgba(0,0,0,.54);
+                font-size: 16px;
+            }
+        }
+        div.left {
+            div.share {
+                a{
+                    i {
+                        display: block;
+                        text-align: center;
+                        font-size: 25px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+        div.right {
+            h3.categorie {
+                text-transform: uppercase;
+                color: #1abebf;
+            }
+            h1.title {
+                font-family: Arial;
+                margin: 20px 0;
+            }
+            h2.description {
+                color: $gris;
+                font-size: 17px;
+                margin-bottom: 30px;
+            }
+            div.user {
+                div.image {
+                    img {
+                        width: 100%
+                    }
+                }
+                div.info {
+                    margin-bottom: 30px;
+                    div.name--follow {
+                        display: inline;
+                        h6 {
+                            display: inline;
+                            margin-right: 5px;
+                        }
+                        button {
+                            background: none;
+                            border: 1px solid #ccc;
+                            border-radius: 5px
+                        }
+                    }
+                    div.date {
+                        color: $gris
+                    }
+                }
+            }
+            article {
+                font-size: 22px;
+                color: $article;
+                font-family: 'Roboto', sans-serif;
+                p {
+
+                }
+            }
+        }
+    }
+}
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+    section.post {
+        div.image--top {
+            margin-top: 10px;
+            img {
+                width: 100%;
+            }
+            p.credit {
+                text-align: center;
+                margin-bottom: 30px;
+                color: rgba(0,0,0,.54);
+                font-size: 16px;
+            }
+        }
+        div.left {
+            div.share {
+                a{
+                    i {
+                        display: block;
+                        text-align: center;
+                        font-size: 25px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+        div.right {
+            h3.categorie {
+                text-transform: uppercase;
+                color: #1abebf;
+            }
+            h1.title {
+                font-family: Arial;
+                margin: 20px 0;
+            }
+            h2.description {
+                color: $gris;
+                font-size: 17px;
+                margin-bottom: 30px;
+            }
+            div.user {
+                div.image {
+                    img {
+                        width: 100%
+                    }
+                }
+                div.info {
+                    margin-bottom: 30px;
+                    div.name--follow {
+                        display: inline;
+                        h6 {
+                            display: inline;
+                            margin-right: 5px;
+                        }
+                        button {
+                            background: none;
+                            border: 1px solid #ccc;
+                            border-radius: 5px
+                        }
+                    }
+                    div.date {
+                        color: $gris
+                    }
+                }
+            }
+            article {
+                font-size: 22px;
+                color: $article;
+                font-family: 'Roboto', sans-serif;
+                p {
+
+                }
+            }
+        }
+    }
+}
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) {
+    .container-fluid {
+        padding: 0;
+    }
+    section.post {
+        div.image--top {
+            margin-top: 10px;
+            img {
+                width: 100%;
+                height: 111px;
+            }
+            p.credit {
+                text-align: center;
+                margin-bottom: 30px;
+                color: rgba(0,0,0,.54);
+                font-size: 16px;
+            }
+        }
+        div.bottom {
+            margin: 0 3px;
+            div.left {
+                div.share {
+                    text-align: center;
+                    a {
+                        display: inline-block;
+                        i {
+                            text-align: center;
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+            div.right {
+                text-align: center;
+                padding: 0;
+                h3.categorie {
+                    text-transform: uppercase;
+                    color: #1abebf;
+                }
+                h1.title {
+                    font-family: Arial;
+                    margin: 20px 0;
+                    font-size: 33px;
+                    font-weight: bold;
+                }
+                h2.description {
+                    color: $gris;
+                    font-size: 17px;
+                    margin-bottom: 30px;
+                }
+                div.user {
+                    div.image {
+                        img {
+                            width: 25%;
+                            padding-bottom: 5px;
+                        }
+                    }
+                    div.info {
+                        margin-bottom: 30px;
+                        div.name--follow {
+                            display: inline;
+                            h6 {
+                                display: inline;
+                                margin-right: 5px;
+                            }
+                            button {
+                                background: none;
+                                border: 1px solid #ccc;
+                                border-radius: 5px
+                            }
+                        }
+                        div.date {
+                            color: $gris
+                        }
+                    }
+                }
+                article {
+                    font-size: 19px;
+                    text-align: left;
+                    color: $article;
+                    font-family: 'Roboto', sans-serif;
+                    padding: 3px;
+                    p {
+
+                    }
+                }
+            }
+        }
+    }
+}
+// Phone
+@media (max-width: 320px) {
+    section.post {
+        div.image--top {
+            img {
+                height: 111px;
+            }
+            p.credit {
+
+            }
+        }
+        div.bottom {
+            margin: 0 3px;
+            div.left {
+                div.share {
+                    text-align: center;
+                    a {
+                        i {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+            div.right {
+                text-align: center;
+                padding: 0;
+                h3.categorie {
+                    text-transform: uppercase;
+                    color: #ffc600;
+                }
+                h1.title {
+                    font-family: Arial;
+                    margin: 20px 0;
+                    font-size: 30px;
+                }
+                h2.description {
+                    color: $gris;
+                    font-size: 17px;
+                    margin-bottom: 30px;
+                }
+                div.user {
+                    div.image {
+                        img {
+                            width: 25%;
+                            padding-bottom: 5px;
+                        }
+                    }
+                    div.info {
+                        margin-bottom: 30px;
+                        div.name--follow {
+                            display: inline;
+                            h6 {
+                                display: inline;
+                                margin-right: 5px;
+                            }
+                            button {
+                                background: none;
+                                border: 1px solid #ccc;
+                                border-radius: 5px
+                            }
+                        }
+                        div.date {
+                            color: $gris
+                        }
+                    }
+                }
+                article {
+                    font-size: 16px;
+                    text-align: left;
+                    color: $article;
+                    font-family: 'Roboto', sans-serif;
+                    padding: 3px;
+                    p {
+
+                    }
+                }
+            }
+        }
+    }
+}
