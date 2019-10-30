@@ -156,6 +156,7 @@ section.post article h3 {
 @media (max-width: 576px) {
   section.post article {
     grid-template-columns: 1fr;
+    padding: 6px;
   }
 }
 
@@ -169,7 +170,7 @@ section.post div.disqus {
     grid-template-columns: 1fr;
   }
 
-  section.post .post > * {
+  section.post > * {
     padding: 5px;
   }
 }

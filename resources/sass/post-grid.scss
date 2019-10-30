@@ -118,6 +118,7 @@ section.post {
     }
     @media (max-width: 576px) {
       grid-template-columns: 1fr;
+      padding: 6px;
     }
   }
   div.disqus {
@@ -126,7 +127,7 @@ section.post {
   }
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
-    .post > * {
+    > * {
       padding: 5px;
     }
   }
