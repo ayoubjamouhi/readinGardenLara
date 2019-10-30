@@ -12,7 +12,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 try {
   window.$ = window.jQuery = require('jquery');
   require('bootstrap');
-  require('summernote');
 } catch(e) {}
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
