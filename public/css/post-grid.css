@@ -3,7 +3,6 @@ section.post {
   grid-template-columns: 2fr 5fr 2fr;
   grid-gap: 5px;
   font-size: 20px;
-  padding: 0 8px;
   /* Start Global CSS */
   /* End Global CSS */
 }
@@ -41,20 +40,20 @@ section.post figure.image {
   grid-column: 1/-1;
 }
 
-@media (max-width: 576px) {
-  section.post figure.image {
-    margin: 0;
-  }
-}
-
 section.post figure.image img {
   width: 100%;
-  /*height: 500px;*/
+  height: 500px;
 }
 
 section.post figure.image figcaption {
   color: #847c7c;
   font-size: 12px;
+}
+
+@media (max-width: 576px) {
+  section.post figure.image {
+    display: none;
+  }
 }
 
 section.post div.myads {
@@ -136,6 +135,12 @@ section.post article {
   color: #000;
 }
 
+section.post article img {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
 section.post article p {
   grid-column: 2/-2;
 }
@@ -161,8 +166,11 @@ section.post div.disqus {
 
 @media (max-width: 576px) {
   section.post {
-    grid-template-columns: 1fr auto;
-    padding: 0;
+    grid-template-columns: 1fr;
+  }
+
+  section.post .post > * {
+    padding: 5px;
   }
 }
 

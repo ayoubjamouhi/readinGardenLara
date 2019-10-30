@@ -64,7 +64,7 @@
       <div class="row">
         <div class="col-md-12">
           <label>HTML</label>
-          <textarea name="html" id="html" v-model="html"></textarea>
+          <vue-editor v-model="html"></vue-editor>
         </div>
       </div>
     </div>
@@ -78,6 +78,80 @@
     </div>
   </form>
 </template>
+
+<script>
+import { VueEditor } from "vue2-editor";
+export default {
+  mounted() {},
+  components: {
+    VueEditor
+  },
+  data() {
+    return {
+      errors: [],
+      title: "Title",
+      description: "Description",
+      categorie: "javascript",
+      slug: "slug",
+      credit: "credit",
+      is_featured: 0,
+      html: "<p>Html</p>",
+      image: null,
+      largeImage: null
+    };
+  },
+  methods: {
+    checkForm(e) {
+      e.preventDefault();
+
+      this.errors = [];
+
+      if (!this.title || !this.title || !this.title || !this.title) {
+        this.errors.push("Name required.");
+      }
+      const data = {
+        title: this.title,
+        description: this.description,
+        categorie: this.categorie,
+        slug: this.slug,
+        credit: this.credit,
+        is_featured: this.is_featured,
+        html: this.html,
+        image: this.image,
+        largeImage: this.largeImage,
+        user_id: "admin"
+      };
+
+      axios
+        .post("/posts", data)
+        .then(function(response) {
+          window.location.href = "/" + response.data.slug;
+        })
+        .catch(function(error) {
+          alert(error.message);
+        });
+    },
+    uploadFile: async function(e) {
+      const { files } = e.target;
+      const data = new FormData();
+      data.append("file", files[0]);
+      data.append("upload_preset", "readingarden_lara");
+      const res = await fetch(
+        "https://api.cloudinary.com/v1_1/dzgho0ttb/image/upload",
+        {
+          method: "POST",
+          body: data
+        }
+      );
+      const file = await res.json();
+
+      this.image = file.secure_url;
+      this.largeImage = file.eager[0].secure_url;
+    }
+  }
+};
+</script>
+
 <style lang="scss">
 form {
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
@@ -149,71 +223,3 @@ form {
   }
 }
 </style>
-<script>
-export default {
-  mounted() {},
-  data() {
-    return {
-      errors: [],
-      title: "Title",
-      description: "Description",
-      categorie: "javascript",
-      slug: "slug",
-      credit: "credit",
-      is_featured: 0,
-      html: "<p>Html</p>",
-      image: null,
-      largeImage: null
-    };
-  },
-  methods: {
-    checkForm(e) {
-      e.preventDefault();
-
-      this.errors = [];
-
-      if (!this.title || !this.title || !this.title || !this.title) {
-        this.errors.push("Name required.");
-      }
-      const data = {
-        title: this.title,
-        description: this.description,
-        categorie: this.categorie,
-        slug: this.slug,
-        credit: this.credit,
-        is_featured: this.is_featured,
-        html: this.html,
-        image: this.image,
-        largeImage: this.largeImage,
-        user_id: "admin"
-      };
-
-      axios
-        .post("/posts", data)
-        .then(function(response) {
-          window.location.href = "/" + response.data.slug;
-        })
-        .catch(function(error) {
-          alert(error.message);
-        });
-    },
-    uploadFile: async function(e) {
-      const { files } = e.target;
-      const data = new FormData();
-      data.append("file", files[0]);
-      data.append("upload_preset", "readingarden_lara");
-      const res = await fetch(
-        "https://api.cloudinary.com/v1_1/dzgho0ttb/image/upload",
-        {
-          method: "POST",
-          body: data
-        }
-      );
-      const file = await res.json();
-
-      this.image = file.secure_url;
-      this.largeImage = file.eager[0].secure_url;
-    }
-  }
-};
-</script>

@@ -21,7 +21,9 @@
                     <a href={{"/". $article_left->slug}}>
                         {{ $article_left->title }}
                     </a>
-                    <a href={{"/post_update/" . $article_left->id }}>🖊</a>
+                    @if(Auth::check())
+                        <a href={{"/post_update/" . $article_left->id }}>🖊</a>
+                    @endif
                 </h1>
                 <h2 class="desc">
                         {{ $article_left->description }}
@@ -44,7 +46,9 @@
                         <a href={{"/". $article_right->slug}}>
                             {{ $article_center1->title }}
                         </a>
-                        <a href={{"/post_update/" . $article_center1->id }}>🖊</a>
+                        @if(Auth::check())
+                            <a href={{"/post_update/" . $article_center1->id }}>🖊</a>
+                        @endif
                     </h1>
                     <h2 class="desc">
                             {{ $article_center1->description }}
@@ -66,7 +70,9 @@
                         <a href={{"/". $article_right->slug}}>
                             {{ $article_center2->title }}
                         </a>
-                        <a href={{"/post_update/" . $article_center2->id }}>🖊</a>
+                        @if(Auth::check())
+                            <a href={{"/post_update/" . $article_center2->id }}>🖊</a>
+                        @endif
                     </h1>
                     <h2 class="desc">
                             {{ $article_center2->description }}
@@ -89,7 +95,9 @@
                         <a href={{"/". $article_right->slug}}>
                             {{ $article_right->title }}
                         </a>
-                        <a href={{"/post_update/" . $article_right->id }}>🖊</a>
+                        @if(Auth::check())
+                            <a href={{"/post_update/" . $article_right->id }}>🖊</a>
+                        @endif
                     </h1>
                     <h2 class="desc">
                             {{ $article_right->description }}
@@ -134,7 +142,9 @@
                                     <a href={{"/" . $article->slug}}>
                                         {{ $article->title}}
                                     </a>
-                                    <a href={{"/post_update/" . $article->id }}>🖊</a>
+                                    @if(Auth::check())
+                                        <a href={{"/post_update/" . $article->id }}>🖊</a>
+                                    @endif
                                 </h1>
                                 <h2 class="desc">{{ $article->description}}</h2>
                                 <h6 class="author">

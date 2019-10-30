@@ -24,6 +24,13 @@ footer div.right span {
   color: #464646;
 }
 
+@media (max-width: 576px) {
+  footer div.right span {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
 footer div.right div.pages ul {
   margin: 0;
 }
@@ -42,125 +49,5 @@ footer div.right div.pages ul li a {
   display: flex;
   align-items: center;
   color: #464646;
-}
-
-@media (max-width: 1200px) {
-  footer {
-    padding: 60px 10px;
-    margin-top: 40px;
-    background-color: #ffc600;
-  }
-
-  footer div.left div.share a {
-    color: black;
-    font-size: 25px;
-    padding-right: 5px;
-  }
-
-  footer div.right div.pages ul {
-    margin: 0;
-  }
-
-  footer div.right div.pages ul li {
-    float: left;
-    list-style: none;
-    margin-right: 9px;
-  }
-
-  footer div.right div.pages ul li a {
-    font-size: 22px;
-    color: black;
-  }
-}
-
-@media (max-width: 576px) {
-  footer {
-    padding: 28px 10px;
-    margin-top: 29px;
-    background-color: #ffc600;
-  }
-
-  footer div.left {
-    text-align: center;
-  }
-
-  footer div.left div.share {
-    text-align: center;
-  }
-
-  footer div.left div.share a {
-    color: black;
-    font-size: 25px;
-    padding-right: 5px;
-  }
-
-  footer div.right span {
-    text-align: center;
-    font-size: 23px;
-    display: block;
-    width: 100%;
-  }
-
-  footer div.right div.pages ul {
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
-  }
-
-  footer div.right div.pages ul li {
-    float: left;
-    list-style: none;
-    margin-right: 9px;
-    width: 100%;
-    text-align: center;
-  }
-
-  footer div.right div.pages ul li a {
-    font-size: 22px;
-    color: black;
-  }
-}
-
-@media (max-width: 320px) {
-  footer {
-    padding: 28px 10px;
-    margin-top: 40px;
-    background-color: #ffc600;
-  }
-
-  footer div.left {
-    text-align: center;
-  }
-
-  footer div.left div.share {
-    text-align: center;
-  }
-
-  footer div.left div.share a {
-    color: black;
-    font-size: 25px;
-    padding-right: 5px;
-  }
-
-  footer div.right span {
-    text-align: center;
-    display: block;
-    width: 100%;
-  }
-
-  footer div.right div.pages ul {
-    margin: 0;
-  }
-
-  footer div.right div.pages ul li {
-    float: left;
-    list-style: none;
-    margin-right: 9px;
-  }
-
-  footer div.right div.pages ul li a {
-    font-size: 22px;
-    color: black;
-  }
 }
 
