@@ -10,5 +10,6 @@
     "/css/welcome.css": "/css/welcome.css",
     "/css/featured-members.css": "/css/featured-members.css",
     "/css/blog.css": "/css/blog.css",
-    "/css/post-grid.css": "/css/post-grid.css"
+    "/css/post-grid.css": "/css/post-grid.css",
+    "/css/blog-grid.css": "/css/blog-grid.css"
 }

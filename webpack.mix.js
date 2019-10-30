@@ -25,6 +25,7 @@ mix
    .sass('resources/sass/blog.scss', 'public/css')
    .js('resources/js/app.js', 'public/js')
    .sass('resources/sass/post-grid.scss', 'public/css')
+   .sass('resources/sass/blog-grid.scss', 'public/css')
    .webpackConfig({
       module: {
             rules: [
