@@ -11,7 +11,7 @@ class Post extends Model
 
     public function index()
     {
-        return $this->get();
+        return $this::latest()->get();
     }
     /**
      * Get by id.

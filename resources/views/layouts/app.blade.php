@@ -30,7 +30,6 @@
     <meta name="og:email" content="jknamouhi@gmail.com"/>
     <meta name="og:country-name" content="USA"/>
     <meta property="og:type" content="blog.posts"/>
-
     @yield('meta')
     <title>readinGarden - @yield('title')</title>
     <link rel="icon" type="image/png" href="/images/favicon.jpg">

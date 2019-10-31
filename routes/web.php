@@ -21,7 +21,10 @@ Route::get('/post_update/{id}', 'PostController@postUpdate')->where('id', '[0-9]
 Route::get('/me', 'UserController@index')->middleware('auth');
 //log out
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
+//sitemap
+Route::get('/sitemap.xml', 'SitemapController@index');
+Route::get('/sitemap.xml/posts', 'SitemapController@posts');
+//
 Route::get('/{slug}', 'PostController@getArticle');
 
 //Route::get('/article/get/{slug}', 'ArticleController@show');
