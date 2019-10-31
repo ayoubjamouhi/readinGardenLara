@@ -33,7 +33,7 @@
     @yield('meta')
     <title>readinGarden - @yield('title')</title>
     <link rel="icon" type="image/png" href="/images/favicon.jpg">
-    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     @yield('css')
     <link rel="stylesheet" href="/css/header.css">
@@ -67,7 +67,7 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-light " style="width: 100%">
             <a href="/" class="navbar-brand">
-              <img src="/images/logo.png" alt="readinGarden" style="width: 100%"/>
+              <img src="https://res.cloudinary.com/dzgho0ttb/image/upload/v1572270504/readingarden_lara/rwplcaxpbymk4fhu6ktf.png" alt="readinGarden" style="width: 100%"/>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
