@@ -1,15 +1,17 @@
 {
     "/js/About.js": "/js/About.js",
+    "/js/About.js.map": "/js/About.js.map",
     "/js/Contact.js": "/js/Contact.js",
+    "/js/Contact.js.map": "/js/Contact.js.map",
     "/js/Privacy.js": "/js/Privacy.js",
+    "/js/Privacy.js.map": "/js/Privacy.js.map",
     "/js/app.js": "/js/app.js",
-    "/css/post.css": "/css/post.css",
     "/css/header.css": "/css/header.css",
     "/css/footer.css": "/css/footer.css",
     "/css/featured.css": "/css/featured.css",
     "/css/welcome.css": "/css/welcome.css",
     "/css/featured-members.css": "/css/featured-members.css",
-    "/css/blog.css": "/css/blog.css",
     "/css/post-grid.css": "/css/post-grid.css",
-    "/css/blog-grid.css": "/css/blog-grid.css"
+    "/css/blog-grid.css": "/css/blog-grid.css",
+    "/js/app.js.map": "/js/app.js.map"
 }
