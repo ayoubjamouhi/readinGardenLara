@@ -98,6 +98,7 @@ class PostController extends Controller
             $post->slug = Input::get('slug');
             $post->credit = Input::get('credit');
             $post->is_featured = Input::get('is_featured');
+            $post->is_draft = Input::get('is_draft') || false;
             $post->html = Input::get('html');
             $post->image = Input::get('image');
             $post->largeImage = Input::get('largeImage');
@@ -141,6 +142,7 @@ class PostController extends Controller
     public function postUpdate($id)
     {
         $post = json_encode((new Post)->getById($id));
+
         return view('postupdate', compact('post'));
     }
 }

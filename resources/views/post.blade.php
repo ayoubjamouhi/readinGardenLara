@@ -16,7 +16,6 @@
 @section('main')
    <section class="post">
    <div class="myads">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <!-- ad unit 1 -->
       <ins class="adsbygoogle"
          style="display:block"
@@ -63,7 +62,6 @@
    >{!! $post->html !!}
    </article>
    <div class="myads">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <!-- ad unit 1 -->
       <ins class="adsbygoogle"
          style="display:block"

@@ -69,11 +69,11 @@
       </div>
     </div>
     <div class="card-footer">
-      <button type="submit" size="sm" color="success">
-        <i class="fa fa-dot-circle-o"></i> Update
+      <button type="submit" size="sm" color="success" :disabled="post.is_draft == 0">
+        <i v-if="post.is_draft == 0" class="fa fa-ban"></i> Update
       </button>
-      <button type="reset" size="sm" color="danger">
-        <i class="fa fa-ban"></i> Vider
+      <button type="reset" size="sm" color="danger" @click="draft" :disabled="post.is_draft == 1">
+        <i v-if="post.is_draft == 1" class="fa fa-ban"></i> Draft
       </button>
     </div>
   </form>
@@ -174,11 +174,12 @@ export default {
         largeImage: this.post.largeImage,
         user_id: "admin"
       };
-
+      console.log(data);
       axios
         .put(`/posts/${this.post.id}`, data)
         .then(function(response) {
-          window.location.href = "/" + response.data.slug;
+          console.log(response);
+          //window.location.href = "/" + response.data.slug;
         })
         .catch(function(error) {
           alert(error.message);
@@ -240,6 +241,10 @@ form {
     font-size: 1.3rem;
     font-weight: 600;
     padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    &:disabled {
+      background: #e2b04a;
+    }
   }
   input[type="radio"] {
     width: auto;

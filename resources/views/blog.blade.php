@@ -32,6 +32,9 @@
                             <div class="data">
                                 <h1>
                                     <a href={{"/" . $article->slug}}>{{$article->title}}</a>
+                                    @if(Auth::check())
+                                        <a href={{"/post_update/" . $article->id }}>🖊</a>
+                                    @endif
                                 </h1>
                                 <h2 class="desc">{{$article->description}}</h2>
                                 <h6 class="author"><a href="#">{{$article->user_id}}</a></h6>

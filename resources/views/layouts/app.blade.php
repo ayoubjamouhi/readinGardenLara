@@ -65,35 +65,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-light " style="width: 100%">
-            <a href="/" class="navbar-brand">
-              <img src="https://res.cloudinary.com/dzgho0ttb/image/upload/v1572270504/readingarden_lara/rwplcaxpbymk4fhu6ktf.png" alt="readinGarden" style="width: 100%"/>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a href="/blog" class="nav-link">BLOG</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact" class="nav-link">CONTACT US</a>
-                </li>
-                @if(Auth::check())
-                  <li class="nav-item">
-                      <a href="/me" class="nav-link">my account</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="/post_manage" class="nav-link">post</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="/logout" class="nav-link">logout {{ Auth::user()->name }}</a>
-                  </li>
-                @endif
-            </ul>
-          </div>
-        </nav>
+        @include('layouts.header')
       </header>
 
     <main id="app">
@@ -101,25 +73,9 @@
     </main>
 
     <footer>
-        <div class="row" style="width: 100%">
-          <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 left">
-            <div class="share">
-              <a target="_blank" href="https://www.facebook.com/readingardencommunity/">
-                <i class="fab fa-facebook"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-youtube"></i>
-              </a>
-            </div>
-          </div>
-          <div class="col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9 right">
-            <span>jfnadev © 2019</span>
-          </div>
-        </div>
-      </footer>
+        @include('layouts.footer')
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
