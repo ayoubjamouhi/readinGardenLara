@@ -148,9 +148,41 @@ export default {
       this.post.image = file.secure_url;
       this.post.largeImage = file.eager[0].secure_url;
     },
-    changeTextarea(e) {
+    draft(e) {
       e.preventDefault();
-      console.log(e);
+      this.errors = [];
+
+      if (
+        !this.post.title ||
+        !this.post.description ||
+        !this.post.categorie ||
+        !this.post.slug
+      ) {
+        this.errors.push("Name required.");
+      }
+      if (this.errors.length != 0) return alert("Check errors");
+      const data = {
+        title: this.post.title,
+        description: this.post.description,
+        categorie: this.post.categorie,
+        slug: this.post.slug,
+        credit: this.post.credit,
+        is_featured: this.post.is_featured,
+        is_draft: 1,
+        html: this.post.html,
+        image: this.post.image,
+        largeImage: this.post.largeImage,
+        user_id: "admin"
+      };
+
+      axios
+        .put(`/posts/${this.post.id}`, data)
+        .then(function(response) {
+          window.location.href = "/" + response.data.slug;
+        })
+        .catch(function(error) {
+          alert(error.message);
+        });
     }
   },
   watch: {
