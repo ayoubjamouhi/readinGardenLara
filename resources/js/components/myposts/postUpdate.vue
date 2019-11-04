@@ -69,9 +69,7 @@
       </div>
     </div>
     <div class="card-footer">
-      <button type="submit" size="sm" color="success" :disabled="post.is_draft == 0">
-        <i v-if="post.is_draft == 0" class="fa fa-ban"></i> Update
-      </button>
+      <button type="submit" size="sm" color="success">Update</button>
       <button type="reset" size="sm" color="danger" @click="draft" :disabled="post.is_draft == 1">
         <i v-if="post.is_draft == 1" class="fa fa-ban"></i> Draft
       </button>

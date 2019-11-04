@@ -102,6 +102,8 @@ section.post {
   article {
     grid-column: 2 / -2;
     color: #000;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
     img {
       width: 80%;
       margin: 0 auto;

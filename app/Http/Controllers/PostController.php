@@ -141,7 +141,7 @@ class PostController extends Controller
     }
     public function postUpdate($id)
     {
-        $post = json_encode((new Post)->getById($id));
+        $post = (new Post)->getById($id);
 
         return view('postupdate', compact('post'));
     }

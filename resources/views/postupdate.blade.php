@@ -7,10 +7,10 @@
 <div class="container" style="padding-bottom: 10px">
     <div class="card">
       <div class="card-header">
-          <strong>Update</strong> post
+          <strong>Update</strong> post : <a target="_blank" href={{ "/" . $post->slug }}>{{ $post->title}}</a>
       </div>
 
-      <post-update :my-post="{{ $post }}"/>
+      <post-update :my-post="{{ json_encode($post) }}"/>
     </div>
 </div>
 @endsection

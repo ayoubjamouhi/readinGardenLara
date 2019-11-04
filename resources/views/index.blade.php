@@ -8,6 +8,17 @@
 @section('main')
 
 <div class="container">
+    <section class="ads">
+        <!-- ad unit 1 -->
+        <ins class="adsbygoogle"
+            style="display:inline-block"
+            data-ad-client="ca-pub-3080286913683536"
+            data-ad-slot="2002740794"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </section>
     <section class="featured">
         <div class="wave"></div>
         <div class="row">

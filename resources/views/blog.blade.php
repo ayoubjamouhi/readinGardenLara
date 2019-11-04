@@ -6,16 +6,28 @@
 @endsection
 @section('main')
 <div class="container">
-        <section class="welcome">
-        <div class="text">
-            <h1>Welcome to readinGarden</h1>
-            <h5>We’ll deliver the best stories and ideas on the topics you care about most straight to your homepage, app, or inbox.</h5>
-            <div class="buttons">
-                <button class="get--started"><a href="/blog">Get started</a></button>
-                <button class="learn--more"><a href="/about-us">Learn more</a></button>
-            </div>
+    <section class="ads">
+        <!-- ad unit 1 -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-3080286913683536"
+            data-ad-slot="2002740794"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </section>
+    <section class="welcome">
+    <div class="text">
+        <h1>Welcome to readinGarden</h1>
+        <h5>We’ll deliver the best stories and ideas on the topics you care about most straight to your homepage, app, or inbox.</h5>
+        <div class="buttons">
+            <button class="get--started"><a href="/blog">Get started</a></button>
+            <button class="learn--more"><a href="/about-us">Learn more</a></button>
         </div>
-        </section>
+    </div>
+    </section>
     <section class="posts">
         <div class="posts--top">
             <h2>Posts</h2>

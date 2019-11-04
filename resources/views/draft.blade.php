@@ -6,6 +6,18 @@
 @endsection
 @section('main')
 <div class="container">
+    <section class="ads">
+        <!-- ad unit 1 -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-3080286913683536"
+            data-ad-slot="2002740794"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </section>
     <section class="welcome">
       <div class="text">
           <h1>Welcome to readinGarden</h1>

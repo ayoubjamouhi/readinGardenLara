@@ -26,6 +26,7 @@
     <meta name="og:type" content="blog, posts"/>
     <meta name="og:url" content="http://readingarden.com"/>
     <meta name="og:site_name" content="readinGarden"/>
+    <meta name="og:image" content="https://res.cloudinary.com/dzgho0ttb/image/upload/v1572270504/readingarden_lara/rwplcaxpbymk4fhu6ktf.png"/>
     <meta name="fb:page_id" content="393214638117399" />
     <meta name="og:email" content="jknamouhi@gmail.com"/>
     <meta name="og:country-name" content="USA"/>
@@ -61,6 +62,10 @@
         line-height: 2;
         /*font-family: 'Work Sans';*/
         }
+        .adsbygoogle {
+          height: 150px !important;
+        }
+
     </style>
 </head>
 <body>
