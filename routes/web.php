@@ -2,7 +2,7 @@
 
 Auth::routes(['register' => false]);
 // Index
-Route::get('/', 'IndexController@index');
+Route::get('/', 'HomeController@index');
 Route::get('/blog', 'PostController@indexBlog');
 // Contacte
 Route::resource('contact', 'ContactController');

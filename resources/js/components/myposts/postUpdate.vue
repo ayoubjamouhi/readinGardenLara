@@ -22,6 +22,7 @@
               <option>--</option>
               <option value="javascript">Javascript</option>
               <option value="healthy">Healthy</option>
+              <option value="mortgage">Mortgage</option>
             </select>
           </div>
         </div>
@@ -54,10 +55,20 @@
             />
           </div>
         </div>
+
         <div class="col-12">
           <div class="form-group">
             <label for="credit">Credit</label>
             <input type="text" name="credit" id="credit" v-model="post.credit" />
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-group">
+            <label for="draft">Draft</label>
+            <select name="draft" id="draft" v-model="post.is_draft">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
           </div>
         </div>
       </div>
@@ -70,9 +81,6 @@
     </div>
     <div class="card-footer">
       <button type="submit" size="sm" color="success">Update</button>
-      <button type="reset" size="sm" color="danger" @click="draft" :disabled="post.is_draft == 1">
-        <i v-if="post.is_draft == 1" class="fa fa-ban"></i> Draft
-      </button>
     </div>
   </form>
 </template>
@@ -114,6 +122,7 @@ export default {
         slug: this.post.slug,
         credit: this.post.credit,
         is_featured: this.post.is_featured,
+        is_draft: this.post.is_draft,
         html: this.post.html,
         image: this.post.image,
         largeImage: this.post.largeImage,
@@ -145,43 +154,6 @@ export default {
 
       this.post.image = file.secure_url;
       this.post.largeImage = file.eager[0].secure_url;
-    },
-    draft(e) {
-      e.preventDefault();
-      this.errors = [];
-
-      if (
-        !this.post.title ||
-        !this.post.description ||
-        !this.post.categorie ||
-        !this.post.slug
-      ) {
-        this.errors.push("Name required.");
-      }
-      if (this.errors.length != 0) return alert("Check errors");
-      const data = {
-        title: this.post.title,
-        description: this.post.description,
-        categorie: this.post.categorie,
-        slug: this.post.slug,
-        credit: this.post.credit,
-        is_featured: this.post.is_featured,
-        is_draft: 1,
-        html: this.post.html,
-        image: this.post.image,
-        largeImage: this.post.largeImage,
-        user_id: "admin"
-      };
-      console.log(data);
-      axios
-        .put(`/posts/${this.post.id}`, data)
-        .then(function(response) {
-          console.log(response);
-          //window.location.href = "/" + response.data.slug;
-        })
-        .catch(function(error) {
-          alert(error.message);
-        });
     }
   },
   watch: {

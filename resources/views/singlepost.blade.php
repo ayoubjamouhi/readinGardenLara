@@ -11,7 +11,7 @@
     <meta name="twitter:site" content="{{ "https://readingarden.com/" . $post->slug }}" />
 @endsection
 @section('css')
-    <link rel="stylesheet" href="css/post-grid.css" >
+    <link rel="stylesheet" href="css/singlepost.css" >
 @endsection
 @section('main')
    <section class="post">
@@ -50,7 +50,9 @@
    </div>
    <h1 class="title">
       {{ $post->title }}
-      <a href={{"/post_update/" . $post->id }}>🖊</a>
+      @if(Auth::check())
+         <a href={{"/post_update/" . $post->id }}>🖊</a>
+      @endif
    </h1>
    <span class="date">
       <time>

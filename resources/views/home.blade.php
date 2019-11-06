@@ -54,7 +54,7 @@
                     </a>
                 @endif
                     <h1>
-                        <a href={{"/". $article_right->slug}}>
+                        <a href={{"/". $article_center1->slug}}>
                             {{ $article_center1->title }}
                         </a>
                         @if(Auth::check())
@@ -78,7 +78,7 @@
                     </a>
                 @endif
                     <h1>
-                        <a href={{"/". $article_right->slug}}>
+                        <a href={{"/". $article_center2->slug}}>
                             {{ $article_center2->title }}
                         </a>
                         @if(Auth::check())

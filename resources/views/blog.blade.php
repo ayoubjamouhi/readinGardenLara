@@ -2,7 +2,7 @@
 @extends('layouts.app')
 @section('css')
     <link rel="stylesheet" href="css/welcome.css" >
-    <link rel="stylesheet" href="css/blog-grid.css" >
+    <link rel="stylesheet" href="css/blog.css" >
 @endsection
 @section('main')
 <div class="container">

@@ -127,7 +127,7 @@ class PostController extends Controller
     {
         $post = (new Post)->show($slug)[0];
         //dd($post[0]->id);
-        return view('post', compact('slug', 'post'));
+        return view('singlepost', compact('slug', 'post'));
     }
 
     public function indexBlog()
