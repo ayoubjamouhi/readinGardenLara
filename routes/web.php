@@ -2,7 +2,7 @@
 
 Auth::routes(['register' => false]);
 // Index
-Route::get('/', 'IndexController@index');
+Route::get('/', 'HomeController@index');
 Route::get('/blog', 'PostController@indexBlog');
 // Contacte
 Route::resource('contact', 'ContactController');
@@ -24,7 +24,9 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 //sitemap
 Route::get('/sitemap.xml', 'SitemapController@index');
 Route::get('/sitemap.xml/posts', 'SitemapController@posts');
-//
+// Draft
+Route::get('/draft', 'DraftController@index')->middleware('auth');
+
 Route::get('/{slug}', 'PostController@getArticle');
 
 //Route::get('/article/get/{slug}', 'ArticleController@show');

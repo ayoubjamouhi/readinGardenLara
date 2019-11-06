@@ -11,7 +11,7 @@ class Post extends Model
 
     public function index()
     {
-        return $this::latest()->get();
+        return $this::latest()->where('is_draft', 0)->get();
     }
     /**
      * Get by id.

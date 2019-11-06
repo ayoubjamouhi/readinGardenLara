@@ -30,6 +30,6 @@ class IndexController extends Controller
         $article_right = $articles[3];
         $articles_featured = (new Post)->featured_articles();
 
-        return view('index', compact('article_left', 'article_center1', 'article_center2', 'article_right', 'articles_featured'));
+        return view('home', compact('article_left', 'article_center1', 'article_center2', 'article_right', 'articles_featured'));
     }
 }

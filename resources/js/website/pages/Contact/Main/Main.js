@@ -142,7 +142,7 @@ class Main extends Component {
                   <Label htmlFor="message">Message</Label>
                   <Input type="textarea" name="message" onChange={(e) => this.handleChange(e)} />
                 </FormGroup>
-                <Button disabled={!this.state.formValid} onClick={(e) => this.valider(e)} color="success">Submit</Button>
+                <Button disabled={!this.state.formValid} onClick={(e) => this.valider(e)} color="success">Send</Button>
               </Form>
           </section>
         </Container>

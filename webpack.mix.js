@@ -12,29 +12,17 @@ const mix = require('laravel-mix');
  */
 
 mix
-   .react('resources/js/website/pages/Contact/Contact.js', 'public/js')
-   .react('resources/js/website/pages/Privacy/Privacy.js', 'public/js')
-   .react('resources/js/website/pages/About/About.js', 'public/js')
+   //.react('resources/js/website/pages/Contact/Contact.js', 'public/js')
+   //.react('resources/js/website/pages/Privacy/Privacy.js', 'public/js')
+   //.react('resources/js/website/pages/About/About.js', 'public/js')
    //.react('resources/js/dashboard/index.js', 'public/js/indexDash.js')
-   //.sass('resources/sass/post.scss', 'public/css')
-   .sass('resources/sass/header.scss', 'public/css')
-   .sass('resources/sass/footer.scss', 'public/css')
-   .sass('resources/sass/home/featured.scss', 'public/css')
-   .sass('resources/sass/home/welcome.scss', 'public/css')
-   .sass('resources/sass/home/featured-members.scss', 'public/css')
+   //.sass('resources/sass/header.scss', 'public/css')
+   //.sass('resources/sass/footer.scss', 'public/css')
+   //.sass('resources/sass/home/featured.scss', 'public/css')
+   //.sass('resources/sass/home/welcome.scss', 'public/css')
+   //.sass('resources/sass/home/featured-members.scss', 'public/css')
    //.sass('resources/sass/blog.scss', 'public/css')
-   .js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/post-grid.scss', 'public/css')
-   .sass('resources/sass/blog-grid.scss', 'public/css')
-   .webpackConfig({
-      module: {
-            rules: [
-               {
-                  /*test: /\.styl$/,
-                  loader: 'style-loader!css-loader!stylus-loader'*/
-               }
-            ]
-      }
-      //devtool: "inline-source-map"
-      })
+   //.sass('resources/sass/singlepost.scss', 'public/css')
+   .sass('resources/sass/home.scss', 'public/css')
+   //.js('resources/js/app.js', 'public/js')
    .sourceMaps();

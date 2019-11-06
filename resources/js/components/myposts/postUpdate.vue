@@ -22,6 +22,7 @@
               <option>--</option>
               <option value="javascript">Javascript</option>
               <option value="healthy">Healthy</option>
+              <option value="mortgage">Mortgage</option>
             </select>
           </div>
         </div>
@@ -54,10 +55,20 @@
             />
           </div>
         </div>
+
         <div class="col-12">
           <div class="form-group">
             <label for="credit">Credit</label>
             <input type="text" name="credit" id="credit" v-model="post.credit" />
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-group">
+            <label for="draft">Draft</label>
+            <select name="draft" id="draft" v-model="post.is_draft">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
           </div>
         </div>
       </div>
@@ -69,12 +80,7 @@
       </div>
     </div>
     <div class="card-footer">
-      <button type="submit" size="sm" color="success">
-        <i class="fa fa-dot-circle-o"></i> Update
-      </button>
-      <button type="reset" size="sm" color="danger">
-        <i class="fa fa-ban"></i> Vider
-      </button>
+      <button type="submit" size="sm" color="success">Update</button>
     </div>
   </form>
 </template>
@@ -116,6 +122,7 @@ export default {
         slug: this.post.slug,
         credit: this.post.credit,
         is_featured: this.post.is_featured,
+        is_draft: this.post.is_draft,
         html: this.post.html,
         image: this.post.image,
         largeImage: this.post.largeImage,
@@ -147,10 +154,6 @@ export default {
 
       this.post.image = file.secure_url;
       this.post.largeImage = file.eager[0].secure_url;
-    },
-    changeTextarea(e) {
-      e.preventDefault();
-      console.log(e);
     }
   },
   watch: {
@@ -208,6 +211,10 @@ form {
     font-size: 1.3rem;
     font-weight: 600;
     padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    &:disabled {
+      background: #e2b04a;
+    }
   }
   input[type="radio"] {
     width: auto;

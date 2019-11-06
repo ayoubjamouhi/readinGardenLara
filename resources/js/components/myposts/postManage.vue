@@ -72,8 +72,8 @@
       <button type="submit" size="sm" color="success">
         <i class="fa fa-dot-circle-o"></i> Sauvegarder
       </button>
-      <button type="reset" size="sm" color="danger">
-        <i class="fa fa-ban"></i> Vider
+      <button type="reset" size="sm" color="danger" @click="draft">
+        <i class="fa fa-ban"></i> Draft
       </button>
     </div>
   </form>
@@ -119,7 +119,8 @@ export default {
         html: this.html,
         image: this.image,
         largeImage: this.largeImage,
-        user_id: "admin"
+        user_id: "admin",
+        is_draft: 0
       };
 
       axios
@@ -147,6 +148,37 @@ export default {
 
       this.image = file.secure_url;
       this.largeImage = file.eager[0].secure_url;
+    },
+    draft(e) {
+      e.preventDefault();
+
+      this.errors = [];
+
+      if (!this.title || !this.title || !this.title || !this.title) {
+        this.errors.push("Name required.");
+      }
+      const data = {
+        title: this.title,
+        description: this.description,
+        categorie: this.categorie,
+        slug: this.slug,
+        credit: this.credit,
+        is_featured: this.is_featured,
+        html: this.html,
+        image: this.image,
+        largeImage: this.largeImage,
+        user_id: "admin",
+        is_draft: 1
+      };
+
+      axios
+        .post("/posts", data)
+        .then(function(response) {
+          window.location.href = "/" + response.data.slug;
+        })
+        .catch(function(error) {
+          alert(error.message);
+        });
     }
   }
 };
