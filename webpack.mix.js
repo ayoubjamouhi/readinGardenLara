@@ -22,6 +22,7 @@ mix
    //.sass('resources/sass/home/welcome.scss', 'public/css')
    //.sass('resources/sass/home/featured-members.scss', 'public/css')
    //.sass('resources/sass/blog.scss', 'public/css')
-   .sass('resources/sass/singlepost.scss', 'public/css')
+   //.sass('resources/sass/singlepost.scss', 'public/css')
+   .sass('resources/sass/home.scss', 'public/css')
    //.js('resources/js/app.js', 'public/js')
    .sourceMaps();

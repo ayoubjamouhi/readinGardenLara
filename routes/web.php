@@ -25,7 +25,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/sitemap.xml', 'SitemapController@index');
 Route::get('/sitemap.xml/posts', 'SitemapController@posts');
 // Draft
-Route::get('/draft', 'DraftController@index');
+Route::get('/draft', 'DraftController@index')->middleware('auth');
 
 Route::get('/{slug}', 'PostController@getArticle');
 

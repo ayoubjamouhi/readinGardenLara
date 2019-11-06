@@ -1,9 +1,7 @@
 @section('title', 'Home')
 @extends('layouts.app')
 @section('css')
-    <link rel="stylesheet" href="css/featured.css" />
-    <link rel="stylesheet" href="css/welcome.css" />
-    <link rel="stylesheet" href="css/featured-members.css" />
+    <link rel="stylesheet" href="css/home.css" />
 @endsection
 @section('main')
 
@@ -28,23 +26,23 @@
                     <img src={{ $article_left->image }} alt="img" />
                 </a>
             @endif
-                <h1>
+                <h3 class="title">
                     <a href={{"/". $article_left->slug}}>
                         {{ $article_left->title }}
                     </a>
                     @if(Auth::check())
                         <a href={{"/post_update/" . $article_left->id }}>🖊</a>
                     @endif
-                </h1>
-                <h2 class="desc">
+                </h3>
+                <span class="desc">
                         {{ $article_left->description }}
-                </h2>
-                <h6 class="author">
+                </span>
+                <span class="author">
                     <a href="#">{{ $article_left->user_id . " in " .$article_left->categorie }}</a>
-                </h6>
-                <h6 class="date">
+                </span>
+                <span class="date">
                 {{ $article_left->created_at->format('d/m/Y') }}
-                </h6>
+                </span>
             </div>
             <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 center">
                 <div>

@@ -25,7 +25,7 @@ section.featured {
        img {
            width: 100%
        }
-       h1 {
+       h3.title {
             line-height: 0.8;
             a {
                 font-size: 27px;
@@ -36,14 +36,14 @@ section.featured {
                 cursor: pointer;
             }
        }
-       h2.desc {
+       span.desc {
            font-style: normal;
            letter-spacing: 0;
            font-size: 16px;
            line-height: 20px;
            color:rgba(0,0,0,.54)
        }
-       h6.author {
+       span.author {
            a {
                color: $author;
                font-style: normal;
@@ -53,7 +53,7 @@ section.featured {
                cursor: pointer;
            }
        }
-       h6.date {
+       span.date {
            font-size: 13px;
            color: rgba(0,0,0,.5);
        }
@@ -66,7 +66,7 @@ section.featured {
                width: 100%
            }
        }
-       h1 {
+       h3.title {
             line-height: 0.8;
             a {
                 font-size: 27px;
@@ -77,14 +77,14 @@ section.featured {
                 cursor: pointer;
             }
        }
-       h2.desc {
+       span.desc {
            font-style: normal;
            letter-spacing: 0;
            font-size: 16px;
            line-height: 20px;
            color:rgba(0,0,0,.54)
        }
-       h6.author {
+       span.author {
            a {
                color: $author;
                font-style: normal;
@@ -94,7 +94,7 @@ section.featured {
                cursor: pointer;
            }
        }
-       h6.date {
+       span.date {
            font-size: 13px;
            color: rgba(0,0,0,.5);
        }
@@ -104,7 +104,7 @@ section.featured {
        img {
            width: 100%
        }
-       h1 {
+       h3 {
             line-height: 0.8;
            a {
                font-size: 27px;
@@ -115,14 +115,14 @@ section.featured {
                cursor: pointer;
            }
        }
-       h2.desc {
+       span.desc {
            font-style: normal;
            letter-spacing: 0;
            font-size: 16px;
            line-height: 20px;
            color:rgba(0,0,0,.54)
        }
-       h6.author {
+       span.author {
            a {
                color: $author;
                font-style: normal;
@@ -132,7 +132,7 @@ section.featured {
                cursor: pointer;
            }
        }
-       h6.date {
+       span.date {
            font-size: 13px;
            color: rgba(0,0,0,.5);
        }
