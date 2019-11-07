@@ -126,7 +126,7 @@ class PostController extends Controller
     public function getArticle($slug)
     {
         $post = (new Post)->show($slug)[0];
-        //dd($post[0]->id);
+        //dd($post);
         return view('singlepost', compact('slug', 'post'));
     }
 

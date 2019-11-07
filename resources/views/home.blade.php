@@ -51,23 +51,23 @@
                         <img src={{ $article_center1->image }} alt="img" />
                     </a>
                 @endif
-                    <h1>
+                    <h3 class="title">
                         <a href={{"/". $article_center1->slug}}>
                             {{ $article_center1->title }}
                         </a>
                         @if(Auth::check())
                             <a href={{"/post_update/" . $article_center1->id }}>🖊</a>
                         @endif
-                    </h1>
-                    <h2 class="desc">
+                    </h3>
+                    <span class="desc">
                             {{ $article_center1->description }}
-                    </h2>
-                    <h6 class="author">
+                    </span>
+                    <span class="author">
                         <a href="#">{{ $article_center1->user_id . " in " .$article_center1->categorie }}</a>
-                    </h6>
-                    <h6 class="date">
+                    </span>
+                    <span class="date">
                     {{ $article_center1->created_at->format('d/m/Y') }}
-                    </h6>
+                    </span>
                 </div>
                 <div>
                 @if($article_center2->image != null && $article_center2->largeImage != null)
@@ -75,23 +75,23 @@
                         <img src={{ $article_center2->image }} alt="img" />
                     </a>
                 @endif
-                    <h1>
+                    <h3 class="title">
                         <a href={{"/". $article_center2->slug}}>
                             {{ $article_center2->title }}
                         </a>
                         @if(Auth::check())
                             <a href={{"/post_update/" . $article_center2->id }}>🖊</a>
                         @endif
-                    </h1>
-                    <h2 class="desc">
+                    </h3>
+                    <span class="desc">
                             {{ $article_center2->description }}
-                    </h2>
-                    <h6 class="author">
+                    </span>
+                    <span class="author">
                         <a href="#">{{ $article_center2->user_id . " in " .$article_center2->categorie }}</a>
-                    </h6>
-                    <h6 class="date">
+                    </span>
+                    <span class="date">
                     {{ $article_center2->created_at->format('d/m/Y') }}
-                    </h6>
+                    </span>
                 </div>
             </div>
             <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 right">
@@ -100,30 +100,30 @@
                         <img src={{ $article_right->image }} alt="img" />
                     </a>
                 @endif
-                    <h1>
+                    <h3 class="title">
                         <a href={{"/". $article_right->slug}}>
                             {{ $article_right->title }}
                         </a>
                         @if(Auth::check())
                             <a href={{"/post_update/" . $article_right->id }}>🖊</a>
                         @endif
-                    </h1>
-                    <h2 class="desc">
+                    </h3>
+                    <span class="desc">
                             {{ $article_right->description }}
-                    </h2>
-                    <h6 class="author">
+                    </span>
+                    <span class="author">
                         <a href="#">{{ $article_right->user_id . " in " .$article_right->categorie }}</a>
-                    </h6>
-                    <h6 class="date">
+                    </span>
+                    <span class="date">
                     {{ $article_right->created_at->format('d/m/Y') }}
-                    </h6>
+                    </span>
             </div>
         </div>
         </section>
         <section class="welcome">
         <div class="text">
-            <h1>Welcome to readinGarden</h1>
-            <h5>We’ll deliver the best stories and ideas on the topics you care about most straight to your homepage, app, or inbox.</h5>
+            <h3>Welcome to readinGarden</h3>
+            <span>We’ll deliver the best stories and ideas on the topics you care about most straight to your homepage, app, or inbox.</span>
             <div class="buttons">
                 <button class="get--started"><a href="/blog">Get started</a></button>
                 <button class="learn--more"><a href="/about-us">Learn more</a></button>
@@ -147,21 +147,21 @@
                     @foreach ($articles_featured as $article)
                             <div class="row post">
                                 <div class="col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9">
-                                <h1>
+                                <h3 class="title">
                                     <a href={{"/" . $article->slug}}>
                                         {{ $article->title}}
                                     </a>
                                     @if(Auth::check())
                                         <a href={{"/post_update/" . $article->id }}>🖊</a>
                                     @endif
-                                </h1>
-                                <h2 class="desc">{{ $article->description}}</h2>
-                                <h6 class="author">
+                                </h3>
+                                <span class="desc">{{ $article->description}}</span>
+                                <span class="author">
                                     <a href="#">
                                         {{ $article->user_id}}
                                     </a>
-                                </h6>
-                                <h6 class="date">{{ $article->created_at->format('d/m/Y')}}</h6>
+                                </span>
+                                <span class="date">{{ $article->created_at->format('d/m/Y')}}</span>
                                 </div>
                                 <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-img">
                             @if($article->image != null && $article->largeImage != null)
@@ -178,19 +178,19 @@
             <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 right">
                 <h2 class="top">
                     Popular on readinGarden
-                    </h2>
+                </h2>
                 <div class="posts">
                     <div class="row post">
                     <div class="col-2 left">
                         <span>01</span>
                     </div>
                     <div class="col-10 right">
-                        <h1><a>The Blockchain Is a Reminder of the Internet’s Failure</a></h1>
-                        <h5 class="author--categorie">
+                        <h4><a>The Blockchain Is a Reminder of the Internet’s Failure</a></h4>
+                        <span class="author--categorie">
                             <a>Andrew Leonard</a>
                             <span> in</span> <a>LOVE/HATE</a>
-                        </h5>
-                        <h6 class="date">Dec 5 . 6 min read</h6>
+                        </span>
+                        <time class="date">Dec 5 . 6 min read</time>
                     </div>
                     </div>
                 </div>

@@ -48,7 +48,10 @@ section.featured-members {
                         height: 100px;
                     }
                 }
-                h1 {
+                span {
+                    display: block;
+                }
+                h3.title {
                     padding-right: 60px;
                     a {
                         font-size: 24px;
@@ -61,14 +64,14 @@ section.featured-members {
                         cursor: pointer;
                     }
                 }
-                h2.desc {
+                span.desc {
                     font-style: normal;
                     letter-spacing: 0;
                     font-size: 16px;
                     line-height: 20px;
                     color:$desc;
                 }
-                h6.author {
+                span.author {
                     a {
                         color: $author;
                         font-style: normal;
@@ -78,7 +81,7 @@ section.featured-members {
                         cursor: pointer;
                     }
                 }
-                h6.date {
+                span.date {
                     font-size: 13px;
                     color: rgba(0,0,0,.5);
                 }
@@ -101,7 +104,10 @@ section.featured-members {
                     }
                 }
                 div.right {
-                    h1 {
+                    span {
+
+                    }
+                    h4 {
                         font-size: 18px!important;
                         line-height: 20px!important;
                         a {
@@ -109,7 +115,7 @@ section.featured-members {
                             font-weight: bold
                         }
                     }
-                    h5.author--categorie {
+                    span.author--categorie {
                         font-size: 14px;
                         a {
                             color: rgba(0,0,0,.7);
@@ -122,7 +128,7 @@ section.featured-members {
 
                         }
                     }
-                    h6.date {
+                    time.date {
                         font-size: 12px;
                         color: rgba(0,0,0,.5);
                     }

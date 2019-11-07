@@ -1,12 +1,15 @@
 @section('title',  $post->title )
 @extends('layouts.app')
 @section('meta')
-    <meta name="description" content="{{ $post->description }}"/>
-    <link rel="canonical" href={{ "https://readingarden.com" . $post->slug }} />
-    <meta name="url" content="{{ "https://readingarden.com/" . $post->slug }}">
-    <meta name="og:title" content="{{ $post->title }}"/>
-    <meta name="og:image" content="{{ $post->largeImage }}"/>
-    <meta name="og:description" content="{{ $post->title }}"/>
+    <meta property="og:site_name" content="readinGarden"/>
+    <meta property="fb:page_id" content="393214638117399" />
+    <meta property="og:email" content="jknamouhi@gmail.com"/>
+    <meta property="og:country-name" content="USA"/>
+    <meta property="og:url" content="{{ "https://readingarden.com/" . $post->slug }}"/>
+    <meta property="og:title" content="{{ $post->title }}"/>
+    <meta property="og:image" content="{{ $post->largeImage == null ? "https://res.cloudinary.com/dzgho0ttb/image/upload/v1573141718/readingarden_lara/mfejjycxelhcaloywd5e.png" : $post->largeImage }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="{{ $post->description }}"/>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="{{ $post->title }}" />
     <meta name="twitter:site" content="{{ "https://readingarden.com/" . $post->slug }}" />
@@ -29,12 +32,12 @@
       </script>
    </div>
    <figure class="image">
-   @if($post->largeImage != null)
-      <img src={{ $post->largeImage }} alt={{ $post->title }} />
-   @endif
-      <figcaption>
-         {{ $post->credit }}
-      </figcaption>
+      @if($post->largeImage != null)
+         <img src={{ $post->largeImage }} alt={{ $post->title }} />
+         <figcaption>
+            {{ $post->credit }}
+         </figcaption>
+      @endif
    </figure>
    <div class="user__categorie">
       <div class="user">

@@ -24,7 +24,7 @@ class Post extends Model
     }
     public function featured_articles()
     {
-        return $this->where('is_featured', 1)->get();
+        return $this->where('is_featured', 1)->where('is_draft', 0)->get();
     }
 
     public function show($slug)

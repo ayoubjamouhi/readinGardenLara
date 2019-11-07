@@ -7,34 +7,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="readinGarden is a blog website"/>
-    <link rel="canonical" href="https://readingarden.com" />
-    <meta name="keywords" content="mortgage, posts, blog"/>
+    <meta name="keywords" content="mortgage,posts,blog,javascript,fitness,article,articles"/>
     <meta name="subject" content="blog posts">
     <meta name="copyright"content="readingarden">
     <meta name="language" content="EN">
     <meta name="robots" content="index,follow" />
     <meta name="Classification" content="Blog">
-    <meta name="author" content="jfnadev, jknamouhi@gmail.com">
     <meta name="copyright" content="jfnadev">
-    <meta name="reply-to" content="jknamouhi@gmail.com">
-    <meta name="owner" content="jfnadev">
-    <meta name="category" content="posts">
-    <meta name="coverage" content="Worldwide">
-    <meta name="distribution" content="Global">
-    <meta name="rating" content="General">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta name="og:type" content="blog, posts"/>
-    <meta name="og:url" content="http://readingarden.com"/>
-    <meta name="og:site_name" content="readinGarden"/>
-    <meta name="og:image" content="https://res.cloudinary.com/dzgho0ttb/image/upload/v1572270504/readingarden_lara/rwplcaxpbymk4fhu6ktf.png"/>
-    <meta name="fb:page_id" content="393214638117399" />
-    <meta name="og:email" content="jknamouhi@gmail.com"/>
-    <meta name="og:country-name" content="USA"/>
-    <meta property="og:type" content="blog.posts"/>
+
     @yield('meta')
-    <title>readinGarden - @yield('title')</title>
+    <title>@yield('title') - readinGarden</title>
     <link rel="icon" type="image/png" href="/images/favicon.jpg">
     <link rel="stylesheet" href="/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
