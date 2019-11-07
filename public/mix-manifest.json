@@ -1,4 +1,36 @@
 {
+<<<<<<< HEAD
     "/css/home.css": "/css/home.css",
     "/mix.js.map": "/mix.js.map"
+||||||| merged common ancestors
+    "/js/About.js": "/js/About.js",
+    "/js/Contact.js": "/js/Contact.js",
+    "/js/Privacy.js": "/js/Privacy.js",
+    "/js/app.js": "/js/app.js",
+    "/css/post.css": "/css/post.css",
+    "/css/header.css": "/css/header.css",
+    "/css/footer.css": "/css/footer.css",
+    "/css/featured.css": "/css/featured.css",
+    "/css/welcome.css": "/css/welcome.css",
+    "/css/featured-members.css": "/css/featured-members.css",
+    "/css/blog.css": "/css/blog.css",
+    "/css/post-grid.css": "/css/post-grid.css",
+    "/css/blog-grid.css": "/css/blog-grid.css"
+=======
+    "/js/About.js": "/js/About.js",
+    "/js/About.js.map": "/js/About.js.map",
+    "/js/Contact.js": "/js/Contact.js",
+    "/js/Contact.js.map": "/js/Contact.js.map",
+    "/js/Privacy.js": "/js/Privacy.js",
+    "/js/Privacy.js.map": "/js/Privacy.js.map",
+    "/js/app.js": "/js/app.js",
+    "/css/header.css": "/css/header.css",
+    "/css/footer.css": "/css/footer.css",
+    "/css/featured.css": "/css/featured.css",
+    "/css/welcome.css": "/css/welcome.css",
+    "/css/featured-members.css": "/css/featured-members.css",
+    "/css/post-grid.css": "/css/post-grid.css",
+    "/css/blog-grid.css": "/css/blog-grid.css",
+    "/js/app.js.map": "/js/app.js.map"
+>>>>>>> 15458371a97a2d207769e15f9ccb989bae92028a
 }
