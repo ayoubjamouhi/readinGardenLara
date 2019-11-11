@@ -49,7 +49,7 @@
          </a>
       </div>
       <div class="categorie">
-         <a href={{ "/categorie/" . $post->categorie }}>
+         <a href={{ "/category/" . $post->categorie }}>
             {{ ucfirst(trans($post->categorie)) }}
          </a>
       </div>
