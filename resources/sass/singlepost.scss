@@ -110,6 +110,9 @@ section.post {
     p {
       grid-column: 2 / -2;
       white-space: pre-wrap;
+      img {
+        width: 95%;
+      }
     }
     blockquote {
       grid-column: 1 / -1;
@@ -118,12 +121,14 @@ section.post {
       grid-column: 1 / -1;
     }
     pre {
-      white-space: pre-wrap;
+      overflow-x: auto;
+      white-space: pre;
       background-color: #23241f;
       color: #f8f8f2;
       margin-bottom: 5px;
       margin-top: 5px;
       padding: 5px 10px;
+      display: inline-block;
     }
     @media (max-width: 576px) {
       grid-template-columns: 1fr;

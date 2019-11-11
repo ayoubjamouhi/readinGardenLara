@@ -12,16 +12,16 @@ const mix = require('laravel-mix');
  */
 
 mix
-   .react('resources/js/website/pages/Contact/Contact.js', 'public/js')
-   .react('resources/js/website/pages/Privacy/Privacy.js', 'public/js')
-   .react('resources/js/website/pages/About/About.js', 'public/js')
-   .sass('resources/sass/header.scss', 'public/css')
-   .sass('resources/sass/footer.scss', 'public/css')
-   .sass('resources/sass/home/featured.scss', 'public/css')
-   .sass('resources/sass/home/welcome.scss', 'public/css')
-   .sass('resources/sass/home/featured-members.scss', 'public/css')
-   .sass('resources/sass/blog.scss', 'public/css')
+   //.react('resources/js/website/pages/Contact/Contact.js', 'public/js')
+   //.react('resources/js/website/pages/Privacy/Privacy.js', 'public/js')
+   //.react('resources/js/website/pages/About/About.js', 'public/js')
+   //.sass('resources/sass/header.scss', 'public/css')
+   //.sass('resources/sass/footer.scss', 'public/css')
+   //.sass('resources/sass/home/featured.scss', 'public/css')
+   //.sass('resources/sass/home/welcome.scss', 'public/css')
+   //.sass('resources/sass/home/featured-members.scss', 'public/css')
+   //.sass('resources/sass/blog.scss', 'public/css')
    .sass('resources/sass/singlepost.scss', 'public/css')
-   .sass('resources/sass/home.scss', 'public/css')
-   .js('resources/js/app.js', 'public/js')
+   //.sass('resources/sass/home.scss', 'public/css')
+   //.js('resources/js/app.js', 'public/js')
    .sourceMaps();

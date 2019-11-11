@@ -28,6 +28,7 @@
       @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700|Work+Sans:300,400,500,600,700,800,900');
       html {
         box-sizing: border-box;
+        height: 100%;
       }
       *, *:before, *:after {
         box-sizing: inherit;
@@ -36,6 +37,7 @@
         padding: 0;
         margin: 0;
         line-height: 2;
+        min-height: 100%;
         /*font-family: 'Work Sans';*/
         }
         .adsbygoogle {

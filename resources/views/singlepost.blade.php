@@ -7,7 +7,9 @@
     <meta property="og:country-name" content="USA"/>
     <meta property="og:url" content="{{ "https://readingarden.com/" . $post->slug }}"/>
     <meta property="og:title" content="{{ $post->title }}"/>
-    <meta property="og:image" content="{{ $post->largeImage == null ? "https://res.cloudinary.com/dzgho0ttb/image/upload/v1573141718/readingarden_lara/mfejjycxelhcaloywd5e.png" : $post->largeImage }}"/>
+    <meta property="og:image" content="{{ str_replace("q_auto,w_1000", "q_200,w_200", $post->largeImage) == null ? "https://res.cloudinary.com/dzgho0ttb/image/upload/v1573141718/readingarden_lara/mfejjycxelhcaloywd5e.png" : $post->largeImage }}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:image:width" content="article"/>
     <meta property="og:type" content="article"/>
     <meta property="og:description" content="{{ $post->description }}"/>
     <meta name="twitter:card" content="summary" />
