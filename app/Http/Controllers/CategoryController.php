@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categorie;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,8 @@ class CategoryController extends Controller
     }
     public function category($cat)
     {
-        $articles = (new Post)::where('categorie', $cat)->get();
+        $articles = (new Post)::find(1)->categories();
+        dd($articles);
         return view('category', compact('articles'));
     }
     /**
@@ -86,5 +88,12 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getCategories()
+    {
+        $categories = Categorie::get();
+
+        return response()->json($categories);
     }
 }

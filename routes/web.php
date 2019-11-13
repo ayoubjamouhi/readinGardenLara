@@ -27,7 +27,8 @@ Route::get('/sitemap.xml/posts', 'SitemapController@posts');
 // Draft
 Route::get('/draft', 'DraftController@index')->middleware('auth');
 // Category
-Route::get('category/{id}', 'CategoryController@category');
+Route::get('category/{cat}', 'CategoryController@category');
+Route::get('categories', 'CategoryController@getCategories');
 Route::resource('category', 'CategoryController');
 
 Route::get('/{slug}', 'PostController@getArticle');

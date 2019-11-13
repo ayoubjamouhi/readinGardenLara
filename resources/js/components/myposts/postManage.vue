@@ -17,11 +17,9 @@
         </div>
         <div class="col-12">
           <div class="form-group">
-            <label for="categorie">Categorie</label>
-            <select name="categorie" id="categorie" v-model="categorie">
-              <option>--</option>
-              <option value="javascript">Javascript</option>
-              <option value="healthy">Healthy</option>
+            <label for="categorie_id">Categorie</label>
+            <select name="categorie_id" id="categorie_id" v-model="categorie_id">
+              <option v-for="(category,index) in categories" :value="category.id">{{category.name}}</option>
             </select>
           </div>
         </div>
@@ -82,16 +80,21 @@
 <script>
 import { VueEditor } from "vue2-editor";
 export default {
-  mounted() {},
+  async mounted() {
+    console.log("hy");
+    let { data } = await axios.get("/categories");
+    this.categories = data;
+  },
   components: {
     VueEditor
   },
   data() {
     return {
       errors: [],
+      categories: [],
       title: "Title",
       description: "Description",
-      categorie: "javascript",
+      categorie_id: 1,
       slug: "slug",
       credit: "credit",
       is_featured: 0,
@@ -112,14 +115,14 @@ export default {
       const data = {
         title: this.title,
         description: this.description,
-        categorie: this.categorie,
+        categorie_id: this.categorie_id,
         slug: this.slug,
         credit: this.credit,
         is_featured: this.is_featured,
         html: this.html,
         image: this.image,
         largeImage: this.largeImage,
-        user_id: "admin",
+        user_id: 1,
         is_draft: 0
       };
 
@@ -160,14 +163,14 @@ export default {
       const data = {
         title: this.title,
         description: this.description,
-        categorie: this.categorie,
+        categorie_id: this.categorie_id,
         slug: this.slug,
         credit: this.credit,
         is_featured: this.is_featured,
         html: this.html,
         image: this.image,
         largeImage: this.largeImage,
-        user_id: "admin",
+        user_id: 1,
         is_draft: 1
       };
 

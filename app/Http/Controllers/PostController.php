@@ -125,9 +125,10 @@ class PostController extends Controller
 
     public function getArticle($slug)
     {
-        $post = (new Post)->show($slug)[0];
-        //dd($post);
-        return view('singlepost', compact('slug', 'post'));
+        $post = (new Post)->show($slug);
+        $test = Post::find(6)->categorie;
+        dd($test);
+        //return view('singlepost', compact('slug', 'post'));
     }
 
     public function indexBlog()

@@ -32,4 +32,8 @@ class Post extends Model
         return $this::where('slug', $slug)->get();
     }
 
+    public function categorie()
+    {
+        $this->hasOne('App\Categorie');
+    }
 }
