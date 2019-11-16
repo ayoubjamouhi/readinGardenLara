@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,9 +14,17 @@ class UserController extends Controller
      */
     public function index()
     {
+
+    }
+    public function me()
+    {
         return view('me');
     }
-
+    public function user($id)
+    {
+        $user = User::find($id)->name;
+        return view('user', compact('user'));
+    }
     /**
      * Show the form for creating a new resource.
      *

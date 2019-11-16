@@ -9,31 +9,18 @@ class Post extends Model
 
     protected $guarded = [];
 
-    public function index()
-    {
-        return $this::latest()->where('is_draft', 0)->get();
-    }
-    /**
-     * Get by id.
-     *
-     * @return Post
-     */
-    public function getById($id)
-    {
-        return $this->where("id", $id)->get()->first();
-    }
     public function featured_articles()
     {
         return $this->where('is_featured', 1)->where('is_draft', 0)->get();
     }
 
-    public function show($slug)
+    public function category()
     {
-        return $this::where('slug', $slug)->get();
+        return $this->belongsTo(Category::class);
     }
 
-    public function categorie()
+    public function user()
     {
-        $this->hasOne('App\Categorie');
+        return $this->belongsTo(User::class);
     }
 }

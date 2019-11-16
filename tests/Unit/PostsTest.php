@@ -11,11 +11,9 @@ class PostsTest extends TestCase
     /** @test */
     public function posts_with_specific_category()
     {
-        $categorie = factory('App\Categorie', 2)->create();
-        $post = factory('App\Post', 5)->create();
-        //dd($post);
-        $categories = $post->find(1)->categorie();
-        dd($categorie);
-
+        $categories = factory('App\Category', 2)->create();
+        $post = factory('App\Post', 6)->create();
+        $posts = $categories->first()->posts;
+        dd($posts);
     }
 }

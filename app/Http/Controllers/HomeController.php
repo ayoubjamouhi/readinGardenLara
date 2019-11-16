@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $articles = (new Post)->index();
+        $articles = Post::all();
         $article_left = $articles[0];
         $article_center1 = $articles[1];
         $article_center2 = $articles[2];

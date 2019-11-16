@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Categorie;
+use App\Category;
 use App\Post;
 use Illuminate\Http\Request;
 
@@ -20,9 +20,8 @@ class CategoryController extends Controller
     }
     public function category($cat)
     {
-        $articles = (new Post)::find(1)->categories();
-        dd($articles);
-        return view('category', compact('articles'));
+        $posts = Category::where('name', $cat)->first()->posts;
+        return view('category', compact('posts'));
     }
     /**
      * Show the form for creating a new resource.
@@ -92,7 +91,7 @@ class CategoryController extends Controller
 
     public function getCategories()
     {
-        $categories = Categorie::get();
+        $categories = Category::all();
 
         return response()->json($categories);
     }
