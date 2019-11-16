@@ -8,6 +8,15 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
+                    <a href="/category/mortgage" class="nav-link">Mortgage</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/category/javascript" class="nav-link">Javascript</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/blog" class="nav-link">BLOG</a>
+                </li>
+                <li class="nav-item">
                     <a href="/blog" class="nav-link">BLOG</a>
                 </li>
                 <li class="nav-item">
