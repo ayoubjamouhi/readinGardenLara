@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return (new Post)->index();
+        return $this::latest()->where('is_draft', 0)->get();
     }
     /**
      * Show the form for creating a new resource.
@@ -45,17 +45,6 @@ class PostController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  string  $slug
-     * @return \Illuminate\Http\Response
-     */
-    public function show($slug)
-    {
-        return (new Post)->show($slug);
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -78,23 +67,22 @@ class PostController extends Controller
         $rules = array(
             'title' => 'required',
             'description' => 'required',
-            'categorie' => 'required',
+            'category_id' => 'required|numeric',
             'slug' => 'required',
             'is_featured' => 'required|numeric',
             'html' => 'required',
-            'user_id' => 'required',
         );
         $validator = Validator::make(Input::all(), $rules);
 
         // process the login
         if ($validator->fails()) {
-            return response()->json(['success' => true]);
+            return response()->json(['success' => false]);
         } else {
             // store
             $post = Post::find($id);
             $post->title = Input::get('title');
             $post->description = Input::get('description');
-            $post->categorie = Input::get('categorie');
+            $post->category_id = Input::get('category_id');
             $post->slug = Input::get('slug');
             $post->credit = Input::get('credit');
             $post->is_featured = Input::get('is_featured');
@@ -102,7 +90,6 @@ class PostController extends Controller
             $post->html = Input::get('html');
             $post->image = Input::get('image');
             $post->largeImage = Input::get('largeImage');
-            $post->user_id = Input::get('user_id');
 
             if (!$post->save()) {
                 return response()->json(['success' => false]);
@@ -125,25 +112,26 @@ class PostController extends Controller
 
     public function getArticle($slug)
     {
-        $post = (new Post)->show($slug);
-        $test = Post::find(6)->categorie;
-        dd($test);
-        //return view('singlepost', compact('slug', 'post'));
+        $post = Post::where('slug', $slug)->get()->first();
+        $category = $post->category->name;
+        $user = $post->user->name;
+        return view('singlepost', compact('slug', 'post', 'category', 'user'));
     }
 
     public function indexBlog()
     {
-        $articles = (new Post)->index();
+        $articles = Post::latest()->where('is_draft', 0)->get();
         return view('blog', compact('articles'));
     }
+
     public function postManage()
     {
         return view('postmanage');
     }
+
     public function postUpdate($id)
     {
-        $post = (new Post)->getById($id);
-
+        $post = Post::find($id)->with('category')->first();
         return view('postupdate', compact('post'));
     }
 }

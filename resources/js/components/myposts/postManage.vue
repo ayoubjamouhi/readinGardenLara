@@ -18,7 +18,8 @@
         <div class="col-12">
           <div class="form-group">
             <label for="categorie_id">Categorie</label>
-            <select name="categorie_id" id="categorie_id" v-model="categorie_id">
+            <select name="categorie_id" id="categorie_id" v-model="category_id">
+              <option value="0">--</option>
               <option v-for="(category,index) in categories" :value="category.id">{{category.name}}</option>
             </select>
           </div>
@@ -81,7 +82,6 @@
 import { VueEditor } from "vue2-editor";
 export default {
   async mounted() {
-    console.log("hy");
     let { data } = await axios.get("/categories");
     this.categories = data;
   },
@@ -94,7 +94,7 @@ export default {
       categories: [],
       title: "Title",
       description: "Description",
-      categorie_id: 1,
+      category_id: 0,
       slug: "slug",
       credit: "credit",
       is_featured: 0,
@@ -109,13 +109,15 @@ export default {
 
       this.errors = [];
 
-      if (!this.title || !this.title || !this.title || !this.title) {
+      if (!this.title || !this.description || !this.slug || !this.html) {
         this.errors.push("Name required.");
       }
+      if (this.category_id == 0) this.errors.push("Enter category");
+      if (this.errors.length != 0) return alert(this.errors[0]);
       const data = {
         title: this.title,
         description: this.description,
-        categorie_id: this.categorie_id,
+        category_id: this.category_id,
         slug: this.slug,
         credit: this.credit,
         is_featured: this.is_featured,
@@ -163,7 +165,7 @@ export default {
       const data = {
         title: this.title,
         description: this.description,
-        categorie_id: this.categorie_id,
+        category_id: this.category_id,
         slug: this.slug,
         credit: this.credit,
         is_featured: this.is_featured,

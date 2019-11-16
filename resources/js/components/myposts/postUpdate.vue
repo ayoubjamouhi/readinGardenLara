@@ -17,12 +17,9 @@
         </div>
         <div class="col-12">
           <div class="form-group">
-            <label for="categorie">Categorie</label>
-            <select name="categorie" id="categorie" v-model="post.categorie">
-              <option>--</option>
-              <option value="javascript">Javascript</option>
-              <option value="healthy">Healthy</option>
-              <option value="mortgage">Mortgage</option>
+            <label for="category">Category</label>
+            <select name="category" id="category" v-model="post.category_id">
+              <option v-for="(category,index) in categories" :value="category.id">{{category.name}}</option>
             </select>
           </div>
         </div>
@@ -97,7 +94,8 @@ export default {
     return {
       errors: [],
       post: this.myPost,
-      content: "<h1>Hy</h1>"
+      content: "<h1>Hy</h1>",
+      categories: []
     };
   },
   methods: {
@@ -109,7 +107,7 @@ export default {
       if (
         !this.post.title ||
         !this.post.description ||
-        !this.post.categorie ||
+        !this.post.category_id ||
         !this.post.slug
       ) {
         this.errors.push("Name required.");
@@ -118,17 +116,16 @@ export default {
       const data = {
         title: this.post.title,
         description: this.post.description,
-        categorie: this.post.categorie,
+        category_id: this.post.category_id,
         slug: this.post.slug,
         credit: this.post.credit,
         is_featured: this.post.is_featured,
         is_draft: this.post.is_draft,
         html: this.post.html,
         image: this.post.image,
-        largeImage: this.post.largeImage,
-        user_id: "admin"
+        largeImage: this.post.largeImage
       };
-
+      console.log(data);
       axios
         .put(`/posts/${this.post.id}`, data)
         .then(function(response) {
@@ -162,7 +159,10 @@ export default {
       deep: true
     }
   },
-  mounted: function() {}
+  async mounted() {
+    let { data } = await axios.get("/categories");
+    this.categories = data;
+  }
 };
 </script>
 

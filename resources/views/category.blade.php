@@ -34,23 +34,23 @@
             <a href="/blog">more</a>
         </div>
         <div class="posts-grid">
-            @foreach($articles as $article)
+            @foreach($posts as $post)
                         <div class="post">
                             <div class="col-img">
-                                @if($article->image != null)
-                                    <img src={{ $article->image }} alt={{ $article->title }} />
+                                @if($post->image != null)
+                                    <img src={{ $post->image }} alt={{ $post->title }} />
                                 @endif
                             </div>
                             <div class="data">
                                 <h1>
-                                    <a href={{"/" . $article->slug}}>{{$article->title}}</a>
+                                    <a href={{"/" . $post->slug}}>{{$post->title}}</a>
                                     @if(Auth::check())
-                                        <a href={{"/post_update/" . $article->id }}>🖊</a>
+                                        <a href={{"/post_update/" . $post->id }}>🖊</a>
                                     @endif
                                 </h1>
-                                <h2 class="desc">{{$article->description}}</h2>
-                                <h6 class="author"><a href="#">{{$article->user_id}}</a></h6>
-                                <h6 class="date">{{$article->date}}</h6>
+                                <h2 class="desc">{{$post->description}}</h2>
+                                <h6 class="author"><a href="#">{{$post->user->name}}</a></h6>
+                                <h6 class="date">{{$post->date}}</h6>
                             </div>
                         </div>
             @endforeach
