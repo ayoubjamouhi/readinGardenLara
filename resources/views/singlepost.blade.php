@@ -45,12 +45,12 @@
       <div class="user">
          <img src="/images/admin.png" alt="images" class="img-circle"/>
          <a href={{ "/user/" . $post->user_id }}>
-            {{ $post->user_id }}
+            {{ $user }}
          </a>
       </div>
       <div class="categorie">
-         <a href={{ "/category/" . $post->categorie }}>
-            {{ ucfirst(trans($post->categorie)) }}
+         <a href={{ "/category/" . $category }}>
+            {{ ucfirst(trans($category)) }}
          </a>
       </div>
    </div>
