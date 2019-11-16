@@ -49,7 +49,7 @@
                                     @endif
                                 </h1>
                                 <h2 class="desc">{{$post->description}}</h2>
-                                <h6 class="author"><a href="#">{{$post->user_id}}</a></h6>
+                                <h6 class="author"><a href="#">{{$post->user->name}}</a></h6>
                                 <h6 class="date">{{$post->date}}</h6>
                             </div>
                         </div>
