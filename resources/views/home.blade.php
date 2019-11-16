@@ -38,7 +38,7 @@
                         {{ $article_left->description }}
                 </span>
                 <span class="author">
-                    <a href="#">{{ $article_left->user_id . " in " .$article_left->categorie }}</a>
+                    <a href="#">{{ $article_left->user->name . " in " .$article_left->category->name }}</a>
                 </span>
                 <span class="date">
                 {{ $article_left->created_at->format('d/m/Y') }}
@@ -63,7 +63,7 @@
                             {{ $article_center1->description }}
                     </span>
                     <span class="author">
-                        <a href="#">{{ $article_center1->user_id . " in " .$article_center1->categorie }}</a>
+                        <a href="#">{{ $article_center1->user->name . " in " .$article_center1->category->name }}</a>
                     </span>
                     <span class="date">
                     {{ $article_center1->created_at->format('d/m/Y') }}
@@ -87,7 +87,7 @@
                             {{ $article_center2->description }}
                     </span>
                     <span class="author">
-                        <a href="#">{{ $article_center2->user_id . " in " .$article_center2->categorie }}</a>
+                        <a href="#">{{ $article_center2->user->name . " in " .$article_center2->category->name }}</a>
                     </span>
                     <span class="date">
                     {{ $article_center2->created_at->format('d/m/Y') }}
@@ -112,7 +112,7 @@
                             {{ $article_right->description }}
                     </span>
                     <span class="author">
-                        <a href="#">{{ $article_right->user_id . " in " .$article_right->categorie }}</a>
+                        <a href="#">{{ $article_right->user->name . " in " .$article_right->category->name }}</a>
                     </span>
                     <span class="date">
                     {{ $article_right->created_at->format('d/m/Y') }}
@@ -158,7 +158,7 @@
                                 <span class="desc">{{ $article->description}}</span>
                                 <span class="author">
                                     <a href="#">
-                                        {{ $article->user_id}}
+                                        {{ $article->user->name}}
                                     </a>
                                 </span>
                                 <span class="date">{{ $article->created_at->format('d/m/Y')}}</span>
