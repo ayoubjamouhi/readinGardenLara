@@ -1,7 +1,7 @@
 <div class="row" style="width: 100%">
     <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 left">
       <div class="share">
-        <a target="_blank" href="https://www.facebook.com/readingardencommunity/">
+        <a target="_blank" href="https://www.facebook.com/readingardenwebsite/">
           <i class="fab fa-facebook"></i>
         </a>
         <a href="#">
