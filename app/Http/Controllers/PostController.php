@@ -131,7 +131,7 @@ class PostController extends Controller
 
     public function postUpdate($id)
     {
-        $post = Post::find($id)->with('category')->first();
+        $post = Post::with('category')->find($id);
         return view('postupdate', compact('post'));
     }
 }

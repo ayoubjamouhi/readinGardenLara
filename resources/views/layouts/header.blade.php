@@ -17,9 +17,6 @@
                     <a href="/blog" class="nav-link">BLOG</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/blog" class="nav-link">BLOG</a>
-                </li>
-                <li class="nav-item">
                     <a href="/contact" class="nav-link">CONTACT US</a>
                 </li>
                 @if(Auth::check())
