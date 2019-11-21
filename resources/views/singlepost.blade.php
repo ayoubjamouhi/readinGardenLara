@@ -17,7 +17,7 @@
     <meta name="twitter:site" content="{{ "https://readingarden.com/" . $post->slug }}" />
 @endsection
 @section('css')
-    <link rel="stylesheet" href="css/singlepost.css" >
+    <link rel="stylesheet" href="/css/singlepost.css" >
 @endsection
 @section('main')
    <section class="post">

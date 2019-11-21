@@ -32,4 +32,9 @@ class HomeController extends Controller
         $articles_featured = (new Post)->featured_articles();
         return view('home', compact('article_left', 'article_center1', 'article_center2', 'article_right', 'articles_featured'));
     }
+
+    public function error404()
+    {
+        return view('error404');
+    }
 }

@@ -22,12 +22,12 @@
         <div class="row">
             <div class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 left">
             @if($article_left->image != null && $article_left->largeImage != null)
-                <a href={{"/". $article_left->slug}}>
-                    <img src={{ $article_left->image }} alt="img" />
+                <a href={{ $article_left->category->name . "/" . $article_left->slug}}>
+                    <img src={{ $article_left->image }} alt={{ $article_left->title }} />
                 </a>
             @endif
                 <h3 class="title">
-                    <a href={{"/". $article_left->slug}}>
+                    <a href={{ $article_left->category->name . "/" . $article_left->slug}}>
                         {{ $article_left->title }}
                     </a>
                     @if(Auth::check())
@@ -47,12 +47,12 @@
             <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 center">
                 <div>
                 @if($article_center1->image != null && $article_center1->largeImage != null)
-                    <a href={{"/". $article_center1->slug}}>
-                        <img src={{ $article_center1->image }} alt="img" />
+                    <a href={{ $article_center1->category->name . "/" . $article_center1->slug}}>
+                        <img src={{ $article_center1->image }} alt={{ $article_center1->title }} />
                     </a>
                 @endif
                     <h3 class="title">
-                        <a href={{"/". $article_center1->slug}}>
+                        <a href={{ $article_center1->category->name . "/" . $article_center1->slug}}>
                             {{ $article_center1->title }}
                         </a>
                         @if(Auth::check())
@@ -71,12 +71,12 @@
                 </div>
                 <div>
                 @if($article_center2->image != null && $article_center2->largeImage != null)
-                    <a href={{"/". $article_center2->slug}}>
-                        <img src={{ $article_center2->image }} alt="img" />
+                    <a href={{ $article_center2->category->name . "/" . $article_center2->slug}}>
+                        <img src={{ $article_center2->image }} alt={{ $article_center2->title }} />
                     </a>
                 @endif
                     <h3 class="title">
-                        <a href={{"/". $article_center2->slug}}>
+                        <a href={{ $article_center2->category->name . "/" . $article_center2->slug}}>
                             {{ $article_center2->title }}
                         </a>
                         @if(Auth::check())
@@ -96,12 +96,12 @@
             </div>
             <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 right">
                 @if($article_right->image != null && $article_right->largeImage != null)
-                    <a href={{"/". $article_right->slug}}>
-                        <img src={{ $article_right->image }} alt="img" />
+                    <a href={{ $article_right->category->name . "/" . $article_right->slug}}>
+                        <img src={{ $article_right->image }} alt={{ $article_right->title }}  />
                     </a>
                 @endif
                     <h3 class="title">
-                        <a href={{"/". $article_right->slug}}>
+                        <a href={{ $article_right->category->name . "/". $article_right->slug}}>
                             {{ $article_right->title }}
                         </a>
                         @if(Auth::check())
@@ -148,7 +148,7 @@
                             <div class="row post">
                                 <div class="col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9">
                                 <h3 class="title">
-                                    <a href={{"/" . $article->slug}}>
+                                    <a href={{ $article->category->name . "/" . $article->slug}}>
                                         {{ $article->title}}
                                     </a>
                                     @if(Auth::check())
@@ -164,11 +164,11 @@
                                 <span class="date">{{ $article->created_at->format('d/m/Y')}}</span>
                                 </div>
                                 <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-img">
-                            @if($article->image != null && $article->largeImage != null)
-                                <a href={{"/" . $article->slug}}>
-                                    <img src={{ $article->image}} alt="img" />
-                                </a>
-                            @endif
+                                @if($article->image != null && $article->largeImage != null)
+                                    <a href={{ $article->category->name . "/" . $article->slug }}>
+                                        <img src={{ $article->image }} alt={{ $article->title }} />
+                                    </a>
+                                @endif
                                 </div>
                             </div>
                     @endforeach

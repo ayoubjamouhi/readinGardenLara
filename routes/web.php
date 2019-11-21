@@ -31,10 +31,9 @@ Route::get('/draft', 'DraftController@index')->middleware('auth');
 Route::get('category/{cat}', 'CategoryController@category');
 Route::get('categories', 'CategoryController@getCategories');
 Route::resource('category', 'CategoryController');
-
-Route::get('/{slug}', 'PostController@getArticle');
-
-//Route::get('/article/get/{slug}', 'ArticleController@show');
+// Article
+Route::get('{category}/{slug}', 'PostController@getArticle');
+Route::get('error404', 'HomeController@error404');
 
 // Home
 //Route::get('/home', 'HomeController@index')->name('home');

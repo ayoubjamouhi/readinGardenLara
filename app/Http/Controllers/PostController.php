@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -40,8 +41,12 @@ class PostController extends Controller
         if (!$create) {
             return response()->json(['success' => false]);
         }
-
-        return response()->json(request()->all());
+        $category = Category::find($create->category_id);
+        if (empty($category)) {
+            return response()->json(['success' => false, 'message' => 'Category unknown']);
+        }
+        $create = array_add($create, 'category_name', $category->name);
+        return response()->json($create);
     }
 
     /**
@@ -94,7 +99,8 @@ class PostController extends Controller
             if (!$post->save()) {
                 return response()->json(['success' => false]);
             }
-
+            $category = Category::find($post->category_id);
+            $post = array_add($post, 'category_name', $category->name);
             return response()->json($post);
         }
     }
@@ -110,9 +116,16 @@ class PostController extends Controller
         //
     }
 
-    public function getArticle($slug)
+    public function getArticle($category, $slug)
     {
-        $post = Post::where('slug', $slug)->get()->first();
+        $get_categorie = Category::where('name', $category)->first();
+        if (empty($get_categorie)) {
+            return redirect('error404');
+        }
+        $post = Post::where(['slug' => $slug, 'category_id' => $get_categorie->id])->get()->first();
+        if (empty($post)) {
+            return redirect('error404');
+        }
         $category = $post->category->name;
         $user = $post->user->name;
         return view('singlepost', compact('slug', 'post', 'category', 'user'));

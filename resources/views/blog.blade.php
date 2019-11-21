@@ -38,19 +38,22 @@
                         <div class="post">
                             <div class="col-img">
                                 @if($article->image != null)
-                                    <img src={{ $article->image }} alt={{ $article->title }} />
+                                    <a href={{ $article->category->name . "/" . $article->slug }}>
+                                        <img src={{ $article->image }} alt={{ $article->title }} />
+
+                                    </a>
                                 @endif
                             </div>
                             <div class="data">
                                 <h1>
-                                    <a href={{"/" . $article->slug}}>{{$article->title}}</a>
+                                    <a href={{ $article->category->name . "/" . $article->slug }}>{{$article->title}}</a>
                                     @if(Auth::check())
                                         <a href={{"/post_update/" . $article->id }}>🖊</a>
                                     @endif
                                 </h1>
-                                <h2 class="desc">{{$article->description}}</h2>
-                                <h6 class="author"><a href="#">{{$article->user->name}}</a></h6>
-                                <h6 class="date">{{$article->date}}</h6>
+                                <h2 class="desc">{{ $article->description }}</h2>
+                                <h6 class="author"><a href="#">{{ $article->user->name }}</a></h6>
+                                <h6 class="date">{{ $article->date }}</h6>
                             </div>
                         </div>
             @endforeach

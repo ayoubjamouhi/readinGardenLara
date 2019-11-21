@@ -129,7 +129,8 @@ export default {
       axios
         .put(`/posts/${this.post.id}`, data)
         .then(function(response) {
-          window.location.href = "/" + response.data.slug;
+          window.location.href =
+            "/" + response.data.category_name + "/" + response.data.slug;
         })
         .catch(function(error) {
           alert(error.message);

@@ -131,7 +131,8 @@ export default {
       axios
         .post("/posts", data)
         .then(function(response) {
-          window.location.href = "/" + response.data.slug;
+          window.location.href =
+            response.data.category_name + "/" + response.data.slug;
         })
         .catch(function(error) {
           alert(error.message);
@@ -179,7 +180,8 @@ export default {
       axios
         .post("/posts", data)
         .then(function(response) {
-          window.location.href = "/" + response.data.slug;
+          window.location.href =
+            response.data.category_name + "/" + response.data.slug;
         })
         .catch(function(error) {
           alert(error.message);
