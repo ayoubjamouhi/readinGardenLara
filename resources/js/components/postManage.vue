@@ -59,6 +59,18 @@
             <input type="text" name="credit" id="credit" v-model="credit" />
           </div>
         </div>
+        <div class="col-12">
+          <div class="form-group">
+            <label for="credit" style="display:inline">Arabic</label>
+            <input
+              type="checkbox"
+              name="is_arabic"
+              id="is_arabic"
+              v-model="is_arabic"
+              style="width: 50px"
+            />
+          </div>
+        </div>
       </div>
       <div class="row">
         <div class="col-md-12">
@@ -98,6 +110,7 @@ export default {
       slug: "slug",
       credit: "credit",
       is_featured: 0,
+      is_arabic: 0,
       html: "<p>Html</p>",
       image: null,
       largeImage: null
@@ -125,12 +138,14 @@ export default {
         image: this.image,
         largeImage: this.largeImage,
         user_id: 1,
-        is_draft: 0
+        is_draft: 0,
+        is_arabic: this.is_arabic
       };
 
       axios
         .post("/posts", data)
         .then(function(response) {
+          console.log(response);
           window.location.href =
             response.data.category_name + "/" + response.data.slug;
         })

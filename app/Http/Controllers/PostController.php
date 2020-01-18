@@ -81,7 +81,7 @@ class PostController extends Controller
 
         // process the login
         if ($validator->fails()) {
-            return response()->json(['success' => false]);
+            return response()->json(['success' => false, 'validator' => 'fails']);
         } else {
             // store
             $post = Post::find($id);
@@ -91,13 +91,13 @@ class PostController extends Controller
             $post->slug = Input::get('slug');
             $post->credit = Input::get('credit');
             $post->is_featured = Input::get('is_featured');
+            $post->is_arabic = Input::get('is_arabic');
             $post->is_draft = Input::get('is_draft') || false;
             $post->html = Input::get('html');
             $post->image = Input::get('image');
             $post->largeImage = Input::get('largeImage');
-
             if (!$post->save()) {
-                return response()->json(['success' => false]);
+                return response()->json(['success' => false, 'save' => false]);
             }
             $category = Category::find($post->category_id);
             $post = array_add($post, 'category_name', $category->name);

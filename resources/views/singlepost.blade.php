@@ -1,3 +1,10 @@
+@section('lang')
+   @if($post->is_arabic == 0)
+      <html lang="en" dir="ltr">
+   @else
+      <html lang="ar" dir="rtl">
+   @endif
+@endsection
 @section('title',  $post->title )
 @extends('layouts.app')
 @section('meta')
@@ -20,7 +27,12 @@
     <link rel="stylesheet" href="/css/singlepost.css" >
 @endsection
 @section('main')
-   <section class="post">
+   @if($post->is_arabic == 0)
+      <section class="post">
+   @else
+      <section class="post" style="text-align: right">
+   @endif
+
    <div class="myads">
       <!-- ad unit 1 -->
       <ins class="adsbygoogle"

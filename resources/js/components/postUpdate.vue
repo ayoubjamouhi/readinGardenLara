@@ -61,6 +61,18 @@
         </div>
         <div class="col-12">
           <div class="form-group">
+            <label for="credit" style="display:inline">Arabic</label>
+            <input
+              type="checkbox"
+              name="is_arabic"
+              id="is_arabic"
+              v-model="post.is_arabic"
+              style="width: 50px"
+            />
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-group">
             <label for="draft">Draft</label>
             <select name="draft" id="draft" v-model="post.is_draft">
               <option value="1">Yes</option>
@@ -120,6 +132,7 @@ export default {
         slug: this.post.slug,
         credit: this.post.credit,
         is_featured: this.post.is_featured,
+        is_arabic: this.post.is_arabic,
         is_draft: this.post.is_draft,
         html: this.post.html,
         image: this.post.image,
@@ -129,6 +142,8 @@ export default {
       axios
         .put(`/posts/${this.post.id}`, data)
         .then(function(response) {
+          console.log(response);
+          if (response.data.success == false) return alert("error");
           window.location.href =
             "/" + response.data.category_name + "/" + response.data.slug;
         })

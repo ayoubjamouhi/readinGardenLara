@@ -24,6 +24,7 @@ class CreatePostsTable extends Migration
             $table->text('description');
             $table->binary('html');
             $table->boolean('is_featured')->default(0)->nullable();
+            $table->boolean('is_arabic')->default(0)->nullable();
             $table->boolean('is_draft')->default(0)->nullable();
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('user_id');

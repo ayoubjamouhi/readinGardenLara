@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+@yield('lang')
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     <meta name="description" content="readinGarden is a blog website"/>
     <meta name="keywords" content="mortgage,posts,blog,javascript,fitness,article,articles"/>
     <meta name="subject" content="blog posts">
-    <meta name="copyright"content="readingarden">
+    <meta name="copyright" content="readingarden">
     <meta name="language" content="EN">
     <meta name="robots" content="index,follow" />
     <meta name="Classification" content="Blog">
