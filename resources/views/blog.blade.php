@@ -40,7 +40,6 @@
                                 @if($article->image != null)
                                     <a href={{ $article->category->name . "/" . $article->slug }}>
                                         <img src={{ $article->image }} alt={{ $article->title }} />
-
                                     </a>
                                 @endif
                             </div>

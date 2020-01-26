@@ -1,9 +1,4 @@
 /node_modules
-/public/hot
-/public/storage
-/public/css
-/public/js
-/public/mix-manifest.json
 /storage/*.key
 /vendor
 .env
@@ -11,6 +6,5 @@ package-lock.json
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
-npm-debug.log
-yarn-error.log
-yarn.lock
+/public/generated/*
+/public/mix-manifest.json
